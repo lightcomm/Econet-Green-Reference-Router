@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nf:module xmlns:nf="http://www.NetFPGA.org/NF2_register_system" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.NetFPGA.org/NF2_register_system NF2_register_system.xsd ">
+	<nf:name>output_bitrate_computator</nf:name>
+	<nf:prefix>output_bitrate_computator</nf:prefix>
+	<nf:location>udp</nf:location>
+	<nf:description>Registers for Bitrate Output</nf:description>
+	<nf:blocksize>64</nf:blocksize>
+	<nf:registers>
+		<nf:register>
+	           <nf:name>cycle_out</nf:name>
+	           <nf:description>Input register contains cycle parameter for time of sampling (6 possible values [0-5]. 0 is default)</nf:description>
+	           <nf:type>generic_software32</nf:type>
+	        </nf:register>
+
+		<nf:register>
+		  <nf:name>q0_bitrate_out</nf:name>
+			<nf:description>Output register contains output bit rate for queue 0</nf:description>
+			<nf:type>generic_hardware32</nf:type>
+		</nf:register>
+		<nf:register>
+		  <nf:name>q1_bitrate_out</nf:name>
+			<nf:description>Output register contains output bit rate for queue 1</nf:description>
+			<nf:type>generic_hardware32</nf:type>
+		</nf:register>
+		<nf:register>
+		  <nf:name>q2_bitrate_out</nf:name>
+			<nf:description>Output register contains output bit rate for queue 2</nf:description>
+			<nf:type>generic_hardware32</nf:type>
+		</nf:register>
+		<nf:register>
+		  <nf:name>q3_bitrate_out</nf:name>
+			<nf:description>Output register contains output bit rate for queue 3</nf:description>
+			<nf:type>generic_hardware32</nf:type>
+		</nf:register>
+		<nf:register>
+		  <nf:name>total_bitrate_out</nf:name>
+			<nf:description>Output register contains output total bitrate</nf:description>
+			<nf:type>generic_hardware32</nf:type>
+		</nf:register>
+	
+	</nf:registers>
+	<nf:constants>
+	</nf:constants>
+	<nf:types>		
+	</nf:types>
+</nf:module>

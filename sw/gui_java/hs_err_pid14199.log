@@ -1,0 +1,308 @@
+#
+# An unexpected error has been detected by Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x0635aeff, pid=14199, tid=3051412368
+#
+# Java VM: Java HotSpot(TM) Client VM (10.0-b22 mixed mode, sharing linux-x86)
+# Problematic frame:
+# V  [libjvm.so+0x35aeff]
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0890a800):  VMThread [stack: 0xb5d8d000,0xb5e0e000] [id=14201]
+
+siginfo:si_signo=SIGSEGV: si_errno=0, si_code=1 (SEGV_MAPERR), si_addr=0x00000050
+
+Registers:
+EAX=0x00000000, EBX=0x00000000, ECX=0x903f0470, EDX=0x00000000
+ESP=0xb5e0cac0, EBP=0xb5e0caf8, ESI=0xb5e0cb30, EDI=0x8d21ae00
+EIP=0x0635aeff, CR2=0x00000050, EFLAGS=0x00210246
+
+Top of Stack: (sp=0xb5e0cac0)
+0xb5e0cac0:   903f0470 8d21ae00 00000000 00000000
+0xb5e0cad0:   902690a0 8d20d870 8c8b2bf8 8d21ae00
+0xb5e0cae0:   8d2465e8 8cb042c0 00000000 088e4de8
+0xb5e0caf0:   b5e0cb30 b5e0cb30 b5e0cb18 061eb41c
+0xb5e0cb00:   088e4de8 b5e0cb30 088e4de8 088e4de8
+0xb5e0cb10:   088e4ce8 088e8008 b5e0cb58 061e268c
+0xb5e0cb20:   088e4ce8 b5e0cb30 00000002 00000002
+0xb5e0cb30:   088e4ce8 088e4de8 8cb04400 088dfeb8 
+
+Instructions: (pc=0x0635aeff)
+0x0635aeef:   5b 5e 5f 5d c3 85 d2 78 14 52 52 8b 40 08 57 51
+0x0635aeff:   ff 50 50 89 c3 83 c4 10 e9 77 ff ff ff 89 d1 8b 
+
+Stack: [0xb5d8d000,0xb5e0e000],  sp=0xb5e0cac0,  free space=510k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0x35aeff]
+V  [libjvm.so+0x1eb41c]
+V  [libjvm.so+0x1e268c]
+V  [libjvm.so+0x1e31dc]
+V  [libjvm.so+0x1eb8b8]
+V  [libjvm.so+0x1e0e32]
+V  [libjvm.so+0x193a95]
+V  [libjvm.so+0x1e11bc]
+V  [libjvm.so+0x3bea2e]
+V  [libjvm.so+0x3cbaa7]
+V  [libjvm.so+0x3cb0bc]
+V  [libjvm.so+0x3cb291]
+V  [libjvm.so+0x3cae6f]
+V  [libjvm.so+0x3113f9]
+C  [libpthread.so.0+0x573b]
+
+VM_Operation (0xb5293dc0): GenCollectForAllocation, mode: safepoint, requested by thread 0x08a40800
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x08a7ec00 JavaThread "TimerQueue" daemon [_thread_blocked, id=14212, stack(0xb51e8000,0xb5239000)]
+  0x088e4000 JavaThread "DestroyJavaVM" [_thread_blocked, id=14200, stack(0xb7f74000,0xb7fc5000)]
+  0x08a40800 JavaThread "AWT-EventQueue-0" [_thread_blocked, id=14211, stack(0xb5245000,0xb5296000)]
+  0x08a3d400 JavaThread "AWT-Shutdown" [_thread_blocked, id=14210, stack(0xb5296000,0xb52e7000)]
+  0x08a3c800 JavaThread "AWT-XAWT" daemon [_thread_blocked, id=14209, stack(0xb52e7000,0xb5338000)]
+  0x08a13800 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=14208, stack(0xb5338000,0xb5389000)]
+  0x08921800 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=14206, stack(0xb59c8000,0xb5a19000)]
+  0x08916c00 JavaThread "CompilerThread0" daemon [_thread_blocked, id=14205, stack(0xb5a19000,0xb5a9a000)]
+  0x08915800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=14204, stack(0xb5a9a000,0xb5aeb000)]
+  0x0890d000 JavaThread "Finalizer" daemon [_thread_blocked, id=14203, stack(0xb5ceb000,0xb5d3c000)]
+  0x0890c000 JavaThread "Reference Handler" daemon [_thread_blocked, id=14202, stack(0xb5d3c000,0xb5d8d000)]
+
+Other Threads:
+=>0x0890a800 VMThread [stack: 0xb5d8d000,0xb5e0e000] [id=14201]
+  0x08922c00 WatcherThread [stack: 0xb5947000,0xb59c8000] [id=14207]
+
+VM state:at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x088e2518/0x088e2540] Threads_lock - owner thread: 0x0890a800
+[0x088e29d8/0x088e29f0] Heap_lock - owner thread: 0x08a40800
+
+Heap
+ def new generation   total 960K, used 64K [0x8c240000, 0x8c340000, 0x8c720000)
+  eden space 896K,   0% used [0x8c240000, 0x8c240000, 0x8c320000)
+  from space 64K, 100% used [0x8c320000, 0x8c330000, 0x8c330000)
+  to   space 64K,   0% used [0x8c330000, 0x8c330000, 0x8c340000)
+ tenured generation   total 11528K, used 11417K [0x8c720000, 0x8d262000, 0x90240000)
+   the space 11528K,  99% used [0x8c720000, 0x8d2465e8, 0x8cb04400, 0x8d262000)
+ compacting perm gen  total 12288K, used 2763K [0x90240000, 0x90e40000, 0x94240000)
+   the space 12288K,  22% used [0x90240000, 0x904f2cf0, 0x904f2e00, 0x90e40000)
+    ro space 8192K,  73% used [0x94240000, 0x948234a0, 0x94823600, 0x94a40000)
+    rw space 12288K,  58% used [0x94a40000, 0x95138668, 0x95138800, 0x95640000)
+
+Dynamic libraries:
+0036b000-00372000 r-xp 00000000 fd:00 33120756   /usr/lib/libXi.so.6.0.0
+00372000-00373000 rwxp 00006000 fd:00 33120756   /usr/lib/libXi.so.6.0.0
+00533000-0054d000 r-xp 00000000 fd:00 20709379   /lib/ld-2.5.so
+0054d000-0054e000 r-xp 00019000 fd:00 20709379   /lib/ld-2.5.so
+0054e000-0054f000 rwxp 0001a000 fd:00 20709379   /lib/ld-2.5.so
+00551000-00553000 r-xp 00000000 fd:00 33117986   /usr/lib/libXau.so.6.0.0
+00553000-00554000 rwxp 00001000 fd:00 33117986   /usr/lib/libXau.so.6.0.0
+00556000-00695000 r-xp 00000000 fd:00 20709393   /lib/libc-2.5.so
+00695000-00696000 --xp 0013f000 fd:00 20709393   /lib/libc-2.5.so
+00696000-00698000 r-xp 0013f000 fd:00 20709393   /lib/libc-2.5.so
+00698000-00699000 rwxp 00141000 fd:00 20709393   /lib/libc-2.5.so
+00699000-0069c000 rwxp 00699000 00:00 0 
+0069e000-006c3000 r-xp 00000000 fd:00 20709416   /lib/libm-2.5.so
+006c3000-006c4000 r-xp 00024000 fd:00 20709416   /lib/libm-2.5.so
+006c4000-006c5000 rwxp 00025000 fd:00 20709416   /lib/libm-2.5.so
+006c7000-006c9000 r-xp 00000000 fd:00 20709400   /lib/libdl-2.5.so
+006c9000-006ca000 r-xp 00001000 fd:00 20709400   /lib/libdl-2.5.so
+006ca000-006cb000 rwxp 00002000 fd:00 20709400   /lib/libdl-2.5.so
+006cd000-006e1000 r-xp 00000000 fd:00 20709404   /lib/libpthread-2.5.so
+006e1000-006e2000 r-xp 00013000 fd:00 20709404   /lib/libpthread-2.5.so
+006e2000-006e3000 rwxp 00014000 fd:00 20709404   /lib/libpthread-2.5.so
+006e3000-006e5000 rwxp 006e3000 00:00 0 
+007e8000-008e7000 r-xp 00000000 fd:00 33117988   /usr/lib/libX11.so.6.2.0
+008e7000-008eb000 rwxp 000ff000 fd:00 33117988   /usr/lib/libX11.so.6.2.0
+008ed000-008f2000 r-xp 00000000 fd:00 33117987   /usr/lib/libXdmcp.so.6.0.0
+008f2000-008f3000 rwxp 00004000 fd:00 33117987   /usr/lib/libXdmcp.so.6.0.0
+008fa000-00909000 r-xp 00000000 fd:00 33117993   /usr/lib/libXext.so.6.4.0
+00909000-0090a000 rwxp 0000e000 fd:00 33117993   /usr/lib/libXext.so.6.4.0
+00a0a000-00a12000 r-xp 00000000 fd:00 33117989   /usr/lib/libXrender.so.1.3.0
+00a12000-00a13000 rwxp 00007000 fd:00 33117989   /usr/lib/libXrender.so.1.3.0
+00a45000-00a49000 r-xp 00000000 fd:00 33117997   /usr/lib/libXfixes.so.3.1.0
+00a49000-00a4a000 rwxp 00003000 fd:00 33117997   /usr/lib/libXfixes.so.3.1.0
+00a54000-00a5b000 r-xp 00000000 fd:00 20709392   /lib/librt-2.5.so
+00a5b000-00a5c000 r-xp 00006000 fd:00 20709392   /lib/librt-2.5.so
+00a5c000-00a5d000 rwxp 00007000 fd:00 20709392   /lib/librt-2.5.so
+00b2b000-00b34000 r-xp 00000000 fd:00 33117998   /usr/lib/libXcursor.so.1.0.2
+00b34000-00b35000 rwxp 00008000 fd:00 33117998   /usr/lib/libXcursor.so.1.0.2
+00bd6000-00be9000 r-xp 00000000 fd:00 20709423   /lib/libnsl-2.5.so
+00be9000-00bea000 r-xp 00012000 fd:00 20709423   /lib/libnsl-2.5.so
+00bea000-00beb000 rwxp 00013000 fd:00 20709423   /lib/libnsl-2.5.so
+00beb000-00bed000 rwxp 00beb000 00:00 0 
+02a14000-02a19000 r-xp 00000000 fd:00 33113746   /usr/lib/libXtst.so.6.1.0
+02a19000-02a1a000 rwxp 00004000 fd:00 33113746   /usr/lib/libXtst.so.6.1.0
+06000000-0641b000 r-xp 00000000 fd:00 34343365   /usr/java/jdk1.6.0_06/jre/lib/i386/client/libjvm.so
+0641b000-06435000 rwxp 0041a000 fd:00 34343365   /usr/java/jdk1.6.0_06/jre/lib/i386/client/libjvm.so
+06435000-06855000 rwxp 06435000 00:00 0 
+08048000-08052000 r-xp 00000000 fd:00 34343197   /usr/java/jdk1.6.0_06/jre/bin/java
+08052000-08053000 rwxp 00009000 fd:00 34343197   /usr/java/jdk1.6.0_06/jre/bin/java
+088df000-08bbb000 rwxp 088df000 00:00 0          [heap]
+8c240000-8c340000 rwxp 8c240000 00:00 0 
+8c340000-8c720000 rwxp 8c340000 00:00 0 
+8c720000-8d262000 rwxp 8c720000 00:00 0 
+8d262000-90240000 rwxp 8d262000 00:00 0 
+90240000-90e40000 rwxp 90240000 00:00 0 
+90e40000-94240000 rwxp 90e40000 00:00 0 
+94240000-94824000 r-xs 00001000 fd:00 34343227   /usr/java/jdk1.6.0_06/jre/lib/i386/client/classes.jsa
+94824000-94a40000 rwxp 94824000 00:00 0 
+94a40000-95139000 rwxp 005e5000 fd:00 34343227   /usr/java/jdk1.6.0_06/jre/lib/i386/client/classes.jsa
+95139000-95640000 rwxp 95139000 00:00 0 
+95640000-95719000 rwxp 00cde000 fd:00 34343227   /usr/java/jdk1.6.0_06/jre/lib/i386/client/classes.jsa
+95719000-95a40000 rwxp 95719000 00:00 0 
+95a40000-95a44000 r-xs 00db7000 fd:00 34343227   /usr/java/jdk1.6.0_06/jre/lib/i386/client/classes.jsa
+95a44000-95e40000 rwxp 95a44000 00:00 0 
+b4d00000-b4d88000 rwxp b4d00000 00:00 0 
+b4d88000-b4e00000 --xp b4d88000 00:00 0 
+b4ea6000-b4eaa000 rwxs 00000000 00:09 4390925    /SYSV00000000 (deleted)
+b4eb0000-b5167000 rwxs 00000000 00:09 4521994    /SYSV00000000 (deleted)
+b5167000-b517c000 r-xp 00000000 fd:00 34343371   /usr/java/jdk1.6.0_06/jre/lib/i386/libdcpr.so
+b517c000-b518f000 rwxp 00014000 fd:00 34343371   /usr/java/jdk1.6.0_06/jre/lib/i386/libdcpr.so
+b5193000-b5197000 r-xs 000ca000 fd:00 34343217   /usr/java/jdk1.6.0_06/jre/lib/ext/localedata.jar
+b5197000-b519a000 rwxp b5197000 00:00 0 
+b519a000-b51e8000 rwxp b519a000 00:00 0 
+b51e8000-b51eb000 --xp b51e8000 00:00 0 
+b51eb000-b5239000 rwxp b51eb000 00:00 0 
+b5239000-b5244000 r-xp 00000000 fd:00 7930232    /tmp/jna61979.tmp
+b5244000-b5245000 rwxp 0000a000 fd:00 7930232    /tmp/jna61979.tmp
+b5245000-b5248000 --xp b5245000 00:00 0 
+b5248000-b5296000 rwxp b5248000 00:00 0 
+b5296000-b5299000 --xp b5296000 00:00 0 
+b5299000-b52e7000 rwxp b5299000 00:00 0 
+b52e7000-b52ea000 --xp b52e7000 00:00 0 
+b52ea000-b5338000 rwxp b52ea000 00:00 0 
+b5338000-b533b000 --xp b5338000 00:00 0 
+b533b000-b5389000 rwxp b533b000 00:00 0 
+b5389000-b5407000 r-xp 00000000 fd:00 34343374   /usr/java/jdk1.6.0_06/jre/lib/i386/libfontmanager.so
+b5407000-b5411000 rwxp 0007e000 fd:00 34343374   /usr/java/jdk1.6.0_06/jre/lib/i386/libfontmanager.so
+b5411000-b5416000 rwxp b5411000 00:00 0 
+b5416000-b5457000 r-xp 00000000 fd:00 34373646   /usr/java/jdk1.6.0_06/jre/lib/i386/xawt/libmawt.so
+b5457000-b545a000 rwxp 00040000 fd:00 34373646   /usr/java/jdk1.6.0_06/jre/lib/i386/xawt/libmawt.so
+b545a000-b54d5000 r-xp 00000000 fd:00 34343369   /usr/java/jdk1.6.0_06/jre/lib/i386/libawt.so
+b54d5000-b54dc000 rwxp 0007b000 fd:00 34343369   /usr/java/jdk1.6.0_06/jre/lib/i386/libawt.so
+b54dc000-b55fe000 rwxp b54dc000 00:00 0 
+b55fe000-b5600000 --xp b55fe000 00:00 0 
+b5601000-b5608000 r-xs 00110000 fd:00 34343418   /usr/java/jdk1.6.0_06/jre/lib/resources.jar
+b5608000-b560f000 r-xp 00000000 fd:00 34343398   /usr/java/jdk1.6.0_06/jre/lib/i386/libnio.so
+b560f000-b5610000 rwxp 00006000 fd:00 34343398   /usr/java/jdk1.6.0_06/jre/lib/i386/libnio.so
+b5610000-b5623000 r-xp 00000000 fd:00 34343397   /usr/java/jdk1.6.0_06/jre/lib/i386/libnet.so
+b5623000-b5624000 rwxp 00013000 fd:00 34343397   /usr/java/jdk1.6.0_06/jre/lib/i386/libnet.so
+b5624000-b5625000 r-xs 0001c000 fd:00 58950207   /home/netfpga/NF2/projects/bitrate_modules/sw/gui_java/lib/swing-layout-1.0.3.jar
+b5625000-b562e000 r-xs 00069000 fd:00 58950217   /home/netfpga/NF2/projects/bitrate_modules/sw/gui_java/lib/net.sourceforge.jpcap-0.01.16.jar
+b562e000-b5633000 r-xs 00023000 fd:00 58950204   /home/netfpga/NF2/projects/bitrate_modules/sw/gui_java/lib/junit-4.4.jar
+b5633000-b5636000 r-xs 00031000 fd:00 58950214   /home/netfpga/NF2/projects/bitrate_modules/sw/gui_java/lib/jna.jar
+b5636000-b5645000 r-xs 0012c000 fd:00 58950215   /home/netfpga/NF2/projects/bitrate_modules/sw/gui_java/lib/jfreechart-1.0.8a.jar
+b5645000-b5675000 r-xs 0016e000 fd:00 58950201   /home/netfpga/NF2/projects/bitrate_modules/sw/gui_java/lib/jemmy.jar
+b5675000-b5800000 r-xs 02df0000 fd:00 34343421   /usr/java/jdk1.6.0_06/jre/lib/rt.jar
+b5800000-b58f9000 rwxp b5800000 00:00 0 
+b58f9000-b5900000 --xp b58f9000 00:00 0 
+b5900000-b5902000 r-xp 00000000 fd:00 58950212   /home/netfpga/NF2/projects/bitrate_modules/sw/gui_java/lib/libnf2.so
+b5902000-b5903000 rwxp 00001000 fd:00 58950212   /home/netfpga/NF2/projects/bitrate_modules/sw/gui_java/lib/libnf2.so
+b5903000-b5909000 r-xs 00046000 fd:00 58950205   /home/netfpga/NF2/projects/bitrate_modules/sw/gui_java/lib/jcommon-1.0.12.jar
+b5909000-b590a000 r-xs 00002000 fd:00 58950206   /home/netfpga/NF2/projects/bitrate_modules/sw/gui_java/lib/jargs.jar
+b590a000-b590b000 r-xs 00000000 fd:00 58950210   /home/netfpga/NF2/projects/bitrate_modules/sw/gui_java/lib/AbsoluteLayout.jar
+b590b000-b593d000 rwxp b590b000 00:00 0 
+b593d000-b5942000 r-xs 0002e000 fd:00 58950233   /home/netfpga/NF2/projects/bitrate_modules/sw/gui_java/router_gui.jar
+b5947000-b5948000 --xp b5947000 00:00 0 
+b5948000-b59c8000 rwxp b5948000 00:00 0 
+b59c8000-b59cb000 --xp b59c8000 00:00 0 
+b59cb000-b5a19000 rwxp b59cb000 00:00 0 
+b5a19000-b5a1c000 --xp b5a19000 00:00 0 
+b5a1c000-b5a9a000 rwxp b5a1c000 00:00 0 
+b5a9a000-b5a9d000 --xp b5a9a000 00:00 0 
+b5a9d000-b5aeb000 rwxp b5a9d000 00:00 0 
+b5aeb000-b5ceb000 r-xp 00000000 fd:00 33117047   /usr/lib/locale/locale-archive
+b5ceb000-b5cee000 --xp b5ceb000 00:00 0 
+b5cee000-b5d3c000 rwxp b5cee000 00:00 0 
+b5d3c000-b5d3f000 --xp b5d3c000 00:00 0 
+b5d3f000-b5d8d000 rwxp b5d3f000 00:00 0 
+b5d8d000-b5d8e000 --xp b5d8d000 00:00 0 
+b5d8e000-b5e15000 rwxp b5d8e000 00:00 0 
+b5e15000-b5e2f000 rwxp b5e15000 00:00 0 
+b5e2f000-b5e35000 rwxp b5e2f000 00:00 0 
+b5e35000-b5e4d000 rwxp b5e35000 00:00 0 
+b5e4d000-b5e4e000 rwxp b5e4d000 00:00 0 
+b5e4e000-b5e4f000 rwxp b5e4e000 00:00 0 
+b5e4f000-b5e56000 rwxp b5e4f000 00:00 0 
+b5e56000-b5e6d000 rwxp b5e56000 00:00 0 
+b5e6d000-b5e73000 rwxp b5e6d000 00:00 0 
+b5e73000-b5e8d000 rwxp b5e73000 00:00 0 
+b5e8d000-b5ea5000 rwxp b5e8d000 00:00 0 
+b5ea5000-b5f18000 rwxp b5ea5000 00:00 0 
+b5f18000-b6220000 rwxp b5f18000 00:00 0 
+b6220000-b7f18000 rwxp b6220000 00:00 0 
+b7f18000-b7f27000 r-xp 00000000 fd:00 34343405   /usr/java/jdk1.6.0_06/jre/lib/i386/libzip.so
+b7f27000-b7f29000 rwxp 0000e000 fd:00 34343405   /usr/java/jdk1.6.0_06/jre/lib/i386/libzip.so
+b7f29000-b7f4c000 r-xp 00000000 fd:00 34343382   /usr/java/jdk1.6.0_06/jre/lib/i386/libjava.so
+b7f4c000-b7f4e000 rwxp 00023000 fd:00 34343382   /usr/java/jdk1.6.0_06/jre/lib/i386/libjava.so
+b7f4e000-b7f59000 r-xp 00000000 fd:00 34343404   /usr/java/jdk1.6.0_06/jre/lib/i386/libverify.so
+b7f59000-b7f5a000 rwxp 0000b000 fd:00 34343404   /usr/java/jdk1.6.0_06/jre/lib/i386/libverify.so
+b7f5a000-b7f63000 r-xp 00000000 fd:00 20709415   /lib/libnss_files-2.5.so
+b7f63000-b7f64000 r-xp 00008000 fd:00 20709415   /lib/libnss_files-2.5.so
+b7f64000-b7f65000 rwxp 00009000 fd:00 20709415   /lib/libnss_files-2.5.so
+b7f65000-b7f6c000 rwxp b7f65000 00:00 0 
+b7f6c000-b7f74000 rwxs 00000000 fd:00 7962904    /tmp/hsperfdata_root/14199
+b7f74000-b7f77000 --xp b7f74000 00:00 0 
+b7f77000-b7fc7000 rwxp b7f77000 00:00 0 
+b7fc7000-b7fce000 r-xp 00000000 fd:00 34373636   /usr/java/jdk1.6.0_06/jre/lib/i386/jli/libjli.so
+b7fce000-b7fd0000 rwxp 00006000 fd:00 34373636   /usr/java/jdk1.6.0_06/jre/lib/i386/jli/libjli.so
+b7fd0000-b7fd1000 r-xp 008fb000 fd:00 33117047   /usr/lib/locale/locale-archive
+b7fd1000-b7fd6000 rwxp b7fd1000 00:00 0 
+b7fd6000-b7fdc000 r-xp 00000000 fd:00 34373640   /usr/java/jdk1.6.0_06/jre/lib/i386/native_threads/libhpi.so
+b7fdc000-b7fdd000 rwxp 00006000 fd:00 34373640   /usr/java/jdk1.6.0_06/jre/lib/i386/native_threads/libhpi.so
+b7fdd000-b7fde000 rwxp b7fdd000 00:00 0 
+b7fde000-b7fdf000 --xp b7fde000 00:00 0 
+b7fdf000-b7fe0000 rwxp b7fdf000 00:00 0 
+b7fe0000-b7fe1000 r-xp b7fe0000 00:00 0          [vdso]
+bfb36000-bfb6c000 rwxp bffc9000 00:00 0          [stack]
+
+VM Arguments:
+jvm_args: -Djava.library.path=lib -Djna.library.path=lib 
+java_command: router_gui.jar --no_download
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=/home/netfpga/NF2/bin:/home/netfpga/NF2/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/X11R6/bin:/home/netfpga/modeltech/linux:/opt/Xilinx/10.1/ISE/bin/lin:/root/bin:/home/netfpga/modeltech/linux:/opt/Xilinx/10.1/ISE/bin/lin
+LD_LIBRARY_PATH=/usr/java/jdk1.6.0_06/jre/lib/i386/client:/usr/java/jdk1.6.0_06/jre/lib/i386:/usr/java/jdk1.6.0_06/jre/../lib/i386:/home/netfpga/NF2/lib/java/NetFPGAFrontEnd/bin:/home/netfpga/NF2/lib/java/NetFPGAFrontEnd/bin:
+SHELL=/bin/bash
+DISPLAY=:0.0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x3be710], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGBUS: [libjvm.so+0x3be710], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGFPE: [libjvm.so+0x30f810], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGPIPE: [libjvm.so+0x30f810], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGXFSZ: [libjvm.so+0x30f810], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGILL: [libjvm.so+0x30f810], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGUSR1: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGUSR2: [libjvm.so+0x311850], sa_mask[0]=0x00000000, sa_flags=0x10000004
+SIGHUP: [libjvm.so+0x3115f0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGINT: [libjvm.so+0x3115f0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGTERM: [libjvm.so+0x3115f0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGQUIT: [libjvm.so+0x3115f0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+
+
+---------------  S Y S T E M  ---------------
+
+OS:CentOS release 5.4 (Final)
+
+uname:Linux 2.6.18-164.el5 #1 SMP Thu Sep 3 03:33:56 EDT 2009 i686
+libc:glibc 2.5 NPTL 2.5 
+rlimit: STACK 10240k, CORE 0k, NPROC 28664, NOFILE 1024, AS infinity
+load average:0.18 0.61 0.66
+
+CPU:total 2 (2 cores per cpu, 1 threads per core) family 15 model 67 stepping 3, cmov, cx8, fxsr, mmx, sse, sse2, sse3, mmxext, 3dnow, 3dnowext
+
+Memory: 4k page, physical 1814916k(777504k free), swap 3637240k(3637240k free)
+
+vm_info: Java HotSpot(TM) Client VM (10.0-b22) for linux-x86 JRE (1.6.0_06-b02), built on Mar 25 2008 00:39:19 by "java_re" with gcc 3.2.1-7a (J2SE release)
+
+time: Sun Feb 26 02:59:34 2012
+elapsed time: 142713 seconds
+

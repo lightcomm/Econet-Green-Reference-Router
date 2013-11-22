@@ -1,0 +1,19 @@
+Welcome to Xilinx CORE Generator.
+Opened project file
+/opt/Xilinx/10.1/ISE/coregen/ip/xilinx/network/com/xilinx/ip/srio_v4_4/delivery/
+example_design/rocketio_wrapper/v4/coregen/coregen.cgp.
+WARNING:sim:252 - Unable to determine location of PDF viewerCustomizing IP...
+Finished Customizing.
+Generating IP...
+WARNING:sim:100 - The Simulation File Type <Behavioral> is not valid for this
+   core. Overriding with File Type <structural>.
+WARNING:coreutil - coreutil:8 - Feature <tri_mode_eth_mac_v3> is enabled with a
+      Hardware_Evaluation license.
+   WARNING:coreutil:8 - Feature <tri_mode_eth_mac_v3> is enabled with a
+      Hardware_Evaluation license.
+Generating Implementation files.
+Generating NGC file.
+Generating Verilog structural model.
+Finished Generating.
+Successfully generated tri_mode_eth_mac_v3_5.
+Closed project file.

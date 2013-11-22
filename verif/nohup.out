@@ -1,0 +1,908 @@
+
+NetFPGA environment:
+  Root dir:       /home/netfpga/NF2
+  Project name:   awm_earth
+  Project dir:    /home/netfpga/NF2/projects/awm_earth
+  Work dir:       /tmp/root
+
+=== Work directory is /tmp/root/verif/awm_earth.
+=== Calling make to build simulation binary with
+cd /tmp/root/verif/awm_earth; rm -rf my_sim; make -f Makefile DUMP_CTRL= SIM_OPT=  vsim_top
+make -C /home/netfpga/NF2/projects/awm_earth/synth registers
+make[1]: Entering directory `/home/netfpga/NF2/projects/awm_earth/synth'
++++testStarted:build.registers.awm_earth
+
+NetFPGA environment:
+  Root dir:       /home/netfpga/NF2
+  Project name:   awm_earth
+  Project dir:    /home/netfpga/NF2/projects/awm_earth
+  Work dir:       /tmp/root
+
+Processing /home/netfpga/NF2/lib/verilog/core/common/xml/global.xml...
+Processing /home/netfpga/NF2/lib/verilog/core/common/xml/nf_defines.xml...
+Processing /home/netfpga/NF2/projects/awm_earth/include/project.xml...
+Processing /home/netfpga/NF2/lib/verilog/io_queues/cpu_dma_queue/xml/cpu_dma_queue.xml...
+Processing /home/netfpga/NF2/lib/verilog/io_queues/ethernet_mac/xml/ethernet_mac.xml...
+Processing /home/netfpga/NF2/lib/verilog/input_arbiter/rr_input_arbiter/xml/rr_input_arbiter.xml...
+WARNING: No module specific XML found for module 'nf2/generic_top'
+WARNING: No module specific XML found for module 'nf2/reference_core'
+Processing /home/netfpga/NF2/lib/verilog/output_port_lookup/cam_router/xml/cam_router.xml...
+Processing /home/netfpga/NF2/lib/verilog/output_queues/sram_rr_output_queues/xml/sram_rr_output_queues.xml...
+WARNING: No module specific XML found for module 'sram_arbiter/sram_weighted_rr'
+WARNING: No module specific XML found for module 'core/user_data_path/evt_cap_data_path'
+Processing /home/netfpga/NF2/lib/verilog/io/mdio/xml/mdio.xml...
+WARNING: No module specific XML found for module 'cpci_bus'
+Processing /home/netfpga/NF2/lib/verilog/dma/xml/dma.xml...
+WARNING: No module specific XML found for module 'core/user_data_path/udp_reg_master'
+Processing /home/netfpga/NF2/lib/verilog/core/rate_limiter/xml/rate_limiter.xml...
+WARNING: No module specific XML found for module 'io_queues/add_rm_hdr'
+Processing /home/netfpga/NF2/lib/verilog/strip_headers/keep_length/xml/strip_headers.xml...
+Processing /home/netfpga/NF2/lib/verilog/core/utils/xml/device_id_reg.xml...
+WARNING: No module specific XML found for module 'core/utils/generic_regs'
+Processing /home/netfpga/NF2/projects/awm_earth/include/awm_earth.xml...
+Processed registers.
++++testFinished:build.registers.awm_earth
+make[1]: Leaving directory `/home/netfpga/NF2/projects/awm_earth/synth'
+make -C /home/netfpga/NF2/projects/CPCI_2.1/synth registers
+make[1]: Entering directory `/home/netfpga/NF2/projects/CPCI_2.1/synth'
++++testStarted:build.registers.CPCI_2.1
+
+NetFPGA environment:
+  Root dir:       /home/netfpga/NF2
+  Project name:   CPCI_2.1
+  Project dir:    /home/netfpga/NF2/projects/CPCI_2.1
+  Work dir:       /tmp/root
+
+Processing /home/netfpga/NF2/lib/verilog/core/common/xml/global.xml...
+Processing /home/netfpga/NF2/lib/verilog/core/common/xml/nf_defines.xml...
+Processing /home/netfpga/NF2/projects/CPCI_2.1/include/project.xml...
+Processing /home/netfpga/NF2/projects/CPCI_2.1/include/cpci_regs.xml...
+Processed registers.
++++testFinished:build.registers.CPCI_2.1
+make[1]: Leaving directory `/home/netfpga/NF2/projects/CPCI_2.1/synth'
+make -C /home/netfpga/NF2/projects/awm_earth/synth cores
+make[1]: Entering directory `/home/netfpga/NF2/projects/awm_earth/synth'
+Made cores.
+make[1]: Leaving directory `/home/netfpga/NF2/projects/awm_earth/synth'
+make -C /home/netfpga/NF2/projects/CPCI_2.1/synth cores
+make[1]: Entering directory `/home/netfpga/NF2/projects/CPCI_2.1/synth'
+Made cores.
+make[1]: Leaving directory `/home/netfpga/NF2/projects/CPCI_2.1/synth'
+===============================================================================
+Building ModelSim binary
+===============================================================================
++++testStarted:build.ModelSim.binary
+UNET_EXTRA_DIRS is
+# Create the behavioral directory
+cd vsim_beh &&  vlog +notimingchecks -incr +define+sg5E +define+x16 +define+MAX_MEM +define+sb166 +libext+.v  +define+VSIM_COMPILE  +incdir+/home/netfpga/NF2/lib/verilog/core/common/src+/home/netfpga/NF2/lib/verilog/core/testbench+/home/netfpga/NF2/projects/awm_earth/include \
+	-y /home/netfpga/NF2/projects/awm_earth/src  -y /home/netfpga/NF2/projects/CPCI_2.1/src -y /home/netfpga/NF2/projects/CPCI_2.1/src/src_coregen -y /opt/Xilinx/10.1/ISE/verilog/src/simprims -y /opt/Xilinx/10.1/ISE/verilog/src/unisims -v /opt/Xilinx/10.1/ISE/verilog/src/XilinxCoreLib/BLK_MEM_GEN_V2_4.v -y /opt/Xilinx/10.1/ISE/verilog/src/XilinxCoreLib -y /opt/Xilinx/10.1/ISE/smartmodel/lin/wrappers/mtiverilog  -y /home/netfpga/NF2/lib/verilog/core/common/src -y /home/netfpga/NF2/lib/verilog/core/testbench -v /home/netfpga/NF2/projects/CPCI_2.1/src/src_coregen/pci_lc_i.v -y /home/netfpga/NF2/lib/verilog/core/common/src   /home/netfpga/NF2/projects/awm_earth/include/dev_id.v /home/netfpga/NF2/projects/awm_earth/include/registers.v  /home/netfpga/NF2/projects/CPCI_2.1/include/registers.v /home/netfpga/NF2/lib/verilog/core/common/src/NF_2.1_defines.v /home/netfpga/NF2/lib/verilog/core/common/src/udp_defines.v /home/netfpga/NF2/projects/CPCI_2.1/include/registers.v /home/netfpga/NF2/projects/awm_earth/include/dev_id.v /home/netfpga/NF2/projects/awm_earth/include/registers.v /home/netfpga/NF2/projects/awm_earth/src/awm_earth_core.v /home/netfpga/NF2/projects/awm_earth/src/awm_earth.v /home/netfpga/NF2/projects/awm_earth/src/dest_ip_filter.v /home/netfpga/NF2/projects/awm_earth/src/div_uu.v /home/netfpga/NF2/projects/awm_earth/src/eth_parser.v /home/netfpga/NF2/projects/awm_earth/src/ip_arp.v /home/netfpga/NF2/projects/awm_earth/src/ip_checksum_ttl.v /home/netfpga/NF2/projects/awm_earth/src/ip_lpm.v /home/netfpga/NF2/projects/awm_earth/src/op_lut_hdr_parser.v /home/netfpga/NF2/projects/awm_earth/src/op_lut_process_sm.v /home/netfpga/NF2/projects/awm_earth/src/output_port_lookup.v /home/netfpga/NF2/projects/awm_earth/src/output_queues.v /home/netfpga/NF2/projects/awm_earth/src/preprocess_control.v /home/netfpga/NF2/projects/awm_earth/src/rate_wp3.v /home/netfpga/NF2/projects/awm_earth/src/router_op_lut_regs.v /home/netfpga/NF2/projects/awm_earth/src/user_data_path.v    /home/netfpga/NF2/lib/verilog/io_queues/cpu_dma_queue/src/cpu_dma_queue_main.v /home/netfpga/NF2/lib/verilog/io_queues/cpu_dma_queue/src/cpu_dma_queue_regs.v /home/netfpga/NF2/lib/verilog/io_queues/cpu_dma_queue/src/cpu_dma_queue.v /home/netfpga/NF2/lib/verilog/io_queues/ethernet_mac/src/mac_grp_regs.v /home/netfpga/NF2/lib/verilog/io_queues/ethernet_mac/src/nf2_mac_grp.v /home/netfpga/NF2/lib/verilog/io_queues/ethernet_mac/src/rx_queue.v /home/netfpga/NF2/lib/verilog/io_queues/ethernet_mac/src/tx_queue.v /home/netfpga/NF2/lib/verilog/input_arbiter/rr_input_arbiter/src/in_arb_regs.v /home/netfpga/NF2/lib/verilog/input_arbiter/rr_input_arbiter/src/input_arbiter.v /home/netfpga/NF2/lib/verilog/nf2/generic_top/src/dump.v /home/netfpga/NF2/lib/verilog/nf2/generic_top/src/nf2_top.v /home/netfpga/NF2/lib/verilog/nf2/generic_top/src/rgmii_io.v /home/netfpga/NF2/lib/verilog/nf2/reference_core/src/nf2_core.v /home/netfpga/NF2/lib/verilog/nf2/reference_core/src/nf2_reg_grp.v /home/netfpga/NF2/lib/verilog/output_port_lookup/cam_router/src/cam_lut_sm.v /home/netfpga/NF2/lib/verilog/output_port_lookup/cam_router/src/router_op_lut_regs_cntr.v /home/netfpga/NF2/lib/verilog/output_port_lookup/cam_router/src/router_op_lut_regs_non_cntr.v /home/netfpga/NF2/lib/verilog/output_port_lookup/cam_router/src/unencoded_cam_lut_sm.v /home/netfpga/NF2/lib/verilog/output_queues/sram_rr_output_queues/src/oq_header_parser.v /home/netfpga/NF2/lib/verilog/output_queues/sram_rr_output_queues/src/oq_reg_helper.v /home/netfpga/NF2/lib/verilog/output_queues/sram_rr_output_queues/src/oq_reg_instances.v /home/netfpga/NF2/lib/verilog/output_queues/sram_rr_output_queues/src/oq_regs_ctrl.v /home/netfpga/NF2/lib/verilog/output_queues/sram_rr_output_queues/src/oq_regs_dual_port_ram.v /home/netfpga/NF2/lib/verilog/output_queues/sram_rr_output_queues/src/oq_regs_eval_empty.v /home/netfpga/NF2/lib/verilog/output_queues/sram_rr_output_queues/src/oq_regs_eval_full.v /home/netfpga/NF2/lib/verilog/output_queues/sram_rr_output_queues/src/oq_regs_generic_reg_grp.v /home/netfpga/NF2/lib/verilog/output_queues/sram_rr_output_queues/src/oq_regs_host_iface.v /home/netfpga/NF2/lib/verilog/output_queues/sram_rr_output_queues/src/oq_regs.v /home/netfpga/NF2/lib/verilog/output_queues/sram_rr_output_queues/src/remove_pkt.v /home/netfpga/NF2/lib/verilog/output_queues/sram_rr_output_queues/src/store_pkt.v /home/netfpga/NF2/lib/verilog/sram_arbiter/sram_weighted_rr/src/cnet_sram_sm.v /home/netfpga/NF2/lib/verilog/sram_arbiter/sram_weighted_rr/src/sram_arbiter.v /home/netfpga/NF2/lib/verilog/sram_arbiter/sram_weighted_rr/src/sram_reg_access.v /home/netfpga/NF2/lib/verilog/io/mdio/src/nf2_mdio.v /home/netfpga/NF2/lib/verilog/cpci_bus/src/cpci_bus.v /home/netfpga/NF2/lib/verilog/dma/src/nf2_dma_bus_fsm.v /home/netfpga/NF2/lib/verilog/dma/src/nf2_dma_que_intfc.v /home/netfpga/NF2/lib/verilog/dma/src/nf2_dma_sync.v /home/netfpga/NF2/lib/verilog/dma/src/nf2_dma.v /home/netfpga/NF2/lib/verilog/core/user_data_path/udp_reg_master/src/udp_reg_master.v /home/netfpga/NF2/lib/verilog/core/rate_limiter/src/rate_limiter_regs.v /home/netfpga/NF2/lib/verilog/core/rate_limiter/src/rate_limiter.v /home/netfpga/NF2/lib/verilog/io_queues/add_rm_hdr/src/add_hdr.v /home/netfpga/NF2/lib/verilog/io_queues/add_rm_hdr/src/add_rm_hdr.v /home/netfpga/NF2/lib/verilog/io_queues/add_rm_hdr/src/rm_hdr.v /home/netfpga/NF2/lib/verilog/strip_headers/keep_length/src/strip_headers.v /home/netfpga/NF2/lib/verilog/core/utils/src/arbitrator.v /home/netfpga/NF2/lib/verilog/core/utils/src/decoder.v /home/netfpga/NF2/lib/verilog/core/utils/src/device_id_reg.v /home/netfpga/NF2/lib/verilog/core/utils/src/fallthrough_small_fifo.v /home/netfpga/NF2/lib/verilog/core/utils/src/fallthrough_small_fifo_v2.v /home/netfpga/NF2/lib/verilog/core/utils/src/lfsr32.v /home/netfpga/NF2/lib/verilog/core/utils/src/priority_encoder.v /home/netfpga/NF2/lib/verilog/core/utils/src/pulse_synchronizer.v /home/netfpga/NF2/lib/verilog/core/utils/src/reg_grp.v /home/netfpga/NF2/lib/verilog/core/utils/src/rotate.v /home/netfpga/NF2/lib/verilog/core/utils/src/small_async_fifo.v /home/netfpga/NF2/lib/verilog/core/utils/src/small_fifo.v /home/netfpga/NF2/lib/verilog/core/utils/src/small_fifo_v2.v /home/netfpga/NF2/lib/verilog/core/utils/src/small_fifo_v3.v /home/netfpga/NF2/lib/verilog/core/utils/src/unused_reg.v /home/netfpga/NF2/lib/verilog/core/utils/generic_regs/src/generic_cntr_regs.v /home/netfpga/NF2/lib/verilog/core/utils/generic_regs/src/generic_hw_regs.v /home/netfpga/NF2/lib/verilog/core/utils/generic_regs/src/generic_regs.v /home/netfpga/NF2/lib/verilog/core/utils/generic_regs/src/generic_sw_regs.v /home/netfpga/NF2/lib/verilog/core/utils/generic_regs/src/generic_table_regs.v /home/netfpga/NF2/lib/verilog/io_queues/ethernet_mac/src/src_coregen/rxfifo_8kx9_to_36.v /home/netfpga/NF2/lib/verilog/io_queues/ethernet_mac/src/src_coregen/rxfifo_8kx9_to_72.v /home/netfpga/NF2/lib/verilog/io_queues/ethernet_mac/src/src_coregen/rxlengthfifo_128x13.v /home/netfpga/NF2/lib/verilog/io_queues/ethernet_mac/src/src_coregen/tri_mode_eth_mac.v /home/netfpga/NF2/lib/verilog/io_queues/ethernet_mac/src/src_coregen/txfifo_1024x36_to_9.v /home/netfpga/NF2/lib/verilog/io_queues/ethernet_mac/src/src_coregen/txfifo_512x72_to_9.v /home/netfpga/NF2/lib/verilog/output_port_lookup/cam_router/src/src_coregen/bram_cam_32x32.v /home/netfpga/NF2/lib/verilog/output_port_lookup/cam_router/src/src_coregen/bram_cam_64x32.v /home/netfpga/NF2/lib/verilog/output_port_lookup/cam_router/src/src_coregen/bram_cam_unencoded_32x32.v /home/netfpga/NF2/lib/verilog/output_port_lookup/cam_router/src/src_coregen/cam_16x32.v /home/netfpga/NF2/lib/verilog/output_port_lookup/cam_router/src/src_coregen/srl_cam_32x32.v /home/netfpga/NF2/lib/verilog/output_port_lookup/cam_router/src/src_coregen/srl_cam_64x32.v /home/netfpga/NF2/lib/verilog/output_port_lookup/cam_router/src/src_coregen/srl_cam_unencoded_32x32.v /home/netfpga/NF2/lib/verilog/cpci_bus/src/src_coregen/net2pci_16x32.v /home/netfpga/NF2/lib/verilog/cpci_bus/src/src_coregen/pci2net_16x60.v /home/netfpga/NF2/lib/verilog/dma/src/src_coregen/syncfifo_512x32.v /home/netfpga/NF2/lib/verilog/io_queues/add_rm_hdr/src/src_coregen/hdr_fifo.v /home/netfpga/NF2/lib/verilog/core/utils/src/src_coregen/async_fifo_256x72_to_36.v /home/netfpga/NF2/lib/verilog/core/utils/src/src_coregen/async_fifo_512x36_progfull_500.v /home/netfpga/NF2/lib/verilog/core/utils/src/src_coregen/async_fifo_512x36_to_72_progfull_500.v /home/netfpga/NF2/lib/verilog/core/utils/src/src_coregen/syncfifo_512x36.v /home/netfpga/NF2/lib/verilog/core/utils/src/src_coregen/syncfifo_512x72.v /home/netfpga/NF2/lib/verilog/core/testbench/testbench.v /home/netfpga/NF2/projects/awm_earth/src/ /opt/Xilinx/10.1/ISE/verilog/src/glbl.v
+Model Technology ModelSim SE vlog 6.2g Compiler 2007.02 Feb 21 2007
+-- Skipping module awm_earth_core
+-- Skipping module awm_earth
+-- Skipping module dest_ip_filter
+-- Skipping module div_uu
+-- Skipping module eth_parser
+-- Skipping module ip_arp
+-- Skipping module ip_checksum_ttl
+-- Skipping module ip_lpm
+-- Skipping module op_lut_hdr_parser
+-- Compiling module op_lut_process_sm
+-- Skipping module output_port_lookup
+-- Skipping module output_queues
+-- Skipping module preprocess_control
+-- Skipping module rate_wp3
+-- Skipping module router_op_lut_regs
+-- Skipping module user_data_path
+-- Skipping module cpu_dma_queue_main
+-- Skipping module cpu_dma_queue_regs
+-- Skipping module cpu_dma_queue
+-- Skipping module mac_grp_regs
+-- Skipping module nf2_mac_grp
+-- Skipping module rx_queue
+-- Skipping module tx_queue
+-- Skipping module in_arb_regs
+-- Skipping module input_arbiter
+-- Skipping module dump
+-- Skipping module nf2_top
+-- Skipping module rgmii_io
+-- Skipping module nf2_core
+-- Skipping module nf2_reg_grp
+-- Skipping module cam_lut_sm
+-- Skipping module router_op_lut_regs_cntr
+-- Skipping module router_op_lut_regs_non_cntr
+-- Skipping module unencoded_cam_lut_sm
+-- Skipping module oq_header_parser
+-- Skipping module oq_reg_helper
+-- Skipping module oq_reg_instances
+-- Skipping module oq_regs_ctrl
+-- Skipping module oq_regs_dual_port_ram
+-- Skipping module oq_regs_eval_empty
+-- Skipping module oq_regs_eval_full
+-- Skipping module oq_regs_generic_reg_grp
+-- Skipping module oq_regs_host_iface
+-- Skipping module oq_regs
+-- Skipping module remove_pkt
+-- Skipping module store_pkt
+-- Skipping module cnet_sram_sm
+-- Skipping module sram_arbiter
+-- Skipping module sram_reg_access
+-- Skipping module nf2_mdio
+-- Skipping module cpci_bus
+-- Skipping module nf2_dma_bus_fsm
+-- Skipping module nf2_dma_que_intfc
+-- Skipping module nf2_dma_sync
+-- Skipping module nf2_dma
+-- Skipping module udp_reg_master
+-- Skipping module rate_limiter_regs
+-- Skipping module rate_limiter
+-- Skipping module add_hdr
+-- Skipping module add_rm_hdr
+-- Skipping module rm_hdr
+-- Skipping module strip_headers
+-- Skipping module arbitrator
+-- Skipping module decoder
+-- Skipping module device_id_reg
+-- Skipping module fallthrough_small_fifo_old
+-- Skipping module fallthrough_small_fifo
+-- Skipping module fallthrough_small_fifo_tester
+-- Skipping module lfsr32
+-- Skipping module priority_encoder
+-- Skipping module pri_encode_test
+-- Skipping module pulse_synchronizer
+-- Skipping module reg_grp
+-- Skipping module rotate
+-- Skipping module small_async_fifo
+-- Skipping module sync_r2w
+-- Skipping module sync_w2r
+-- Skipping module rptr_empty
+-- Skipping module wptr_full
+-- Skipping module fifo_mem
+-- Skipping module small_fifo_v1
+-- Skipping module small_fifo_v2
+-- Skipping module small_fifo_tester
+-- Skipping module small_fifo
+-- Skipping module unused_reg
+-- Skipping module generic_cntr_regs
+-- Skipping module generic_hw_regs
+-- Skipping module generic_regs
+-- Skipping module generic_sw_regs
+-- Skipping module generic_table_regs
+-- Skipping module rxfifo_8kx9_to_36
+-- Skipping module rxfifo_8kx9_to_72
+-- Skipping module rxlengthfifo_128x13
+-- Skipping module tri_mode_eth_mac
+-- Compiling module glbl
+-- Skipping module txfifo_1024x36_to_9
+-- Skipping module txfifo_512x72_to_9
+-- Skipping module bram_cam_32x32
+-- Skipping module bram_cam_64x32
+-- Skipping module bram_cam_unencoded_32x32
+-- Skipping module cam_16x32
+-- Skipping module srl_cam_32x32
+-- Skipping module srl_cam_64x32
+-- Skipping module srl_cam_unencoded_32x32
+-- Skipping module net2pci_16x32
+-- Skipping module pci2net_16x60
+-- Skipping module syncfifo_512x32
+-- Skipping module hdr_fifo
+-- Skipping module async_fifo_256x72_to_36
+-- Skipping module async_fifo_512x36_progfull_500
+-- Skipping module async_fifo_512x36_to_72_progfull_500
+-- Skipping module syncfifo_512x36
+-- Skipping module syncfifo_512x72
+-- Skipping module testbench
+** Warning: /opt/Xilinx/10.1/ISE/verilog/src/glbl.v(5): 'glbl' already exists and will be overwritten.
+-- Compiling module glbl
+-- Scanning library directory '/home/netfpga/NF2/projects/awm_earth/src'
+-- Scanning library directory '/home/netfpga/NF2/projects/CPCI_2.1/src'
+-- Scanning library directory '/home/netfpga/NF2/projects/CPCI_2.1/src/src_coregen'
+-- Scanning library directory '/opt/Xilinx/10.1/ISE/verilog/src/simprims'
+-- Scanning library directory '/opt/Xilinx/10.1/ISE/verilog/src/unisims'
+-- Skipping module IBUF
+-- Skipping module DCM
+-- Skipping module dcm_clock_divide_by_2
+-- Skipping module dcm_maximum_period_check
+-- Skipping module dcm_clock_lost
+-- Skipping module BUFGMUX
+-- Skipping module IBUFG
+-- Skipping module FDDRRSE
+-- Skipping module OBUF
+-- Skipping module INV
+-- Skipping module VCC
+-- Skipping module GND
+-- Skipping module FDCE
+-- Skipping module LUT2
+-- Skipping module FDC
+-- Skipping module FD
+-- Skipping module SRL16
+-- Skipping module FDE
+-- Skipping module SRL16E
+-- Skipping module LUT4_L
+-- Skipping module LUT4_D
+-- Skipping module LUT3_L
+-- Skipping module LUT3_D
+-- Skipping module LUT2_D
+-- Skipping module LUT2_L
+-- Skipping module MUXF5
+-- Skipping module LUT4
+-- Skipping module LUT3
+-- Skipping module FDCPE
+-- Skipping module LUT1
+-- Skipping module MUXCY
+-- Skipping module FDP
+-- Skipping module FDRE
+-- Skipping module FDPE
+-- Skipping module XORCY
+-- Skipping module MUXCY_L
+-- Skipping module AND2
+-- Scanning library file '/opt/Xilinx/10.1/ISE/verilog/src/XilinxCoreLib/BLK_MEM_GEN_V2_4.v'
+-- Scanning library directory '/opt/Xilinx/10.1/ISE/verilog/src/XilinxCoreLib'
+-- Skipping module FIFO_GENERATOR_V3_2
+-- Skipping module fifo_generator_v3_2_bhv_ver_as
+-- Skipping module fifo_generator_v3_2_bhv_ver_ss
+-- Skipping module fifo_generator_v3_2_bhv_ver_preload0
+-- Skipping module FIFO_GENERATOR_V3_3
+-- Skipping module fifo_generator_v3_3_bhv_ver_as
+-- Skipping module fifo_generator_v3_3_bhv_ver_ss
+-- Skipping module fifo_generator_v3_3_bhv_ver_preload0
+-- Skipping module CAM_V5_1
+-- Scanning library directory '/opt/Xilinx/10.1/ISE/smartmodel/lin/wrappers/mtiverilog'
+-- Scanning library directory '/home/netfpga/NF2/lib/verilog/core/common/src'
+-- Scanning library directory '/home/netfpga/NF2/lib/verilog/core/testbench'
+-- Skipping module u_board
+-- Skipping module phy_mdio_port
+-- Skipping module host32
+-- Skipping module target32
+-- Skipping module net
+-- Skipping module cpci_program_iface
+-- Scanning library file '/home/netfpga/NF2/projects/CPCI_2.1/src/src_coregen/pci_lc_i.v'
+-- Scanning library directory '/home/netfpga/NF2/lib/verilog/core/common/src'
+** Warning: /home/netfpga/NF2/lib/verilog/core/common/src/cy7c1370.v(100): [TMREN] - Redefinition of macro: teohz.
+** Warning: /home/netfpga/NF2/lib/verilog/core/common/src/cy7c1370.v(102): [TMREN] - Redefinition of macro: tchz.
+** Warning: /home/netfpga/NF2/lib/verilog/core/common/src/cy7c1370.v(105): [TMREN] - Redefinition of macro: tco.
+** Warning: /home/netfpga/NF2/lib/verilog/core/common/src/cy7c1370.v(108): [TMREN] - Redefinition of macro: tas.
+** Warning: /home/netfpga/NF2/lib/verilog/core/common/src/cy7c1370.v(109): [TMREN] - Redefinition of macro: tah.
+-- Skipping module cy7c1370
+-- Skipping module ddr2
+-- Scanning library directory '/home/netfpga/NF2/projects/awm_earth/src'
+-- Scanning library directory '/home/netfpga/NF2/projects/CPCI_2.1/src'
+-- Skipping module cpci_top
+-- Skipping module cpci_clock_checker
+-- Skipping module pcim_top
+-- Skipping module reg_file
+-- Skipping module cnet_reg_access
+-- Skipping module cnet_reg_iface
+-- Skipping module cnet_reprogram
+-- Skipping module cnet_dma_bus_master
+-- Skipping module dma_engine
+-- Skipping module cpci_heartbeat
+-- Skipping module cfg
+-- Skipping module pci_userapp
+-- Skipping module fifo_8x32
+-- Skipping module dma_read_fifo_4x32
+-- Skipping module dma_engine_ctrl
+-- Skipping module dma_engine_rr_arb
+-- Skipping module dma_engine_pci_xfer
+-- Skipping module dma_engine_alignment
+-- Skipping module dma_engine_cntr
+-- Scanning library directory '/home/netfpga/NF2/projects/CPCI_2.1/src/src_coregen'
+-- Skipping module pcim_lc
+-- Skipping module cpci_pci2net_16x60
+-- Skipping module pci2net_dma_16x32
+-- Skipping module net2pci_dma_512x32
+-- Scanning library directory '/opt/Xilinx/10.1/ISE/verilog/src/simprims'
+-- Scanning library directory '/opt/Xilinx/10.1/ISE/verilog/src/unisims'
+-- Skipping module BUFGDLL
+-- Skipping module IOBUF_PCI33_3
+-- Skipping module OBUFT_PCI33_3
+-- Skipping module IBUF_PCI33_3
+-- Skipping module IBUFG_PCI33_3
+-- Skipping module BUFG
+-- Skipping module CLKDLL
+-- Skipping module clkdll_maximum_period_check
+-- Scanning library file '/opt/Xilinx/10.1/ISE/verilog/src/XilinxCoreLib/BLK_MEM_GEN_V2_4.v'
+-- Scanning library directory '/opt/Xilinx/10.1/ISE/verilog/src/XilinxCoreLib'
+-- Scanning library directory '/opt/Xilinx/10.1/ISE/smartmodel/lin/wrappers/mtiverilog'
+-- Scanning library directory '/home/netfpga/NF2/lib/verilog/core/common/src'
+-- Scanning library directory '/home/netfpga/NF2/lib/verilog/core/testbench'
+-- Scanning library file '/home/netfpga/NF2/projects/CPCI_2.1/src/src_coregen/pci_lc_i.v'
+-- Skipping module PCI_LC_I
+-- Scanning library directory '/home/netfpga/NF2/lib/verilog/core/common/src'
+-- Scanning library directory '/home/netfpga/NF2/projects/awm_earth/src'
+-- Scanning library directory '/home/netfpga/NF2/projects/CPCI_2.1/src'
+-- Scanning library directory '/home/netfpga/NF2/projects/CPCI_2.1/src/src_coregen'
+-- Scanning library directory '/opt/Xilinx/10.1/ISE/verilog/src/simprims'
+-- Skipping module X_INV
+-- Skipping module X_BUF
+-- Skipping module X_OR2
+-- Skipping module X_AND2
+-- Skipping module X_OR3
+-- Skipping module X_AND3
+-- Skipping module X_FF
+-- Skipping UPD ffsrce
+-- Skipping module X_PU
+-- Skipping module X_AND4
+-- Skipping module X_MUX2
+-- Skipping UPD mux
+-- Skipping module X_ZERO
+-- Skipping module X_OR4
+-- Skipping module X_ONE
+-- Skipping module X_AND5
+-- Skipping module X_XOR2
+-- Skipping module X_TRI
+-- Skipping module X_XOR4
+-- Skipping module X_XOR3
+-- Scanning library file '/opt/Xilinx/10.1/ISE/verilog/src/XilinxCoreLib/BLK_MEM_GEN_V2_4.v'
+-- Scanning library file '/home/netfpga/NF2/projects/CPCI_2.1/src/src_coregen/pci_lc_i.v'
+
+Top level modules:
+	dump
+	cam_lut_sm
+	oq_reg_helper
+	strip_headers
+	arbitrator
+	decoder
+	fallthrough_small_fifo_old
+	fallthrough_small_fifo_tester
+	lfsr32
+	pri_encode_test
+	small_fifo_v1
+	small_fifo_v2
+	small_fifo_tester
+	generic_table_regs
+	glbl
+	bram_cam_32x32
+	bram_cam_64x32
+	cam_16x32
+	srl_cam_32x32
+	srl_cam_64x32
+	testbench
+touch model_sim
++++testFinished:build.ModelSim.binary
+=== Simulation compiled.
+=== Will run the following tests:
+test_flex_router_get 
+
+
+=== Setting up simulation in /tmp/root/verif/awm_earth/test_flex_router_get...
+=== Copying files to test directory /tmp/root/verif/awm_earth/test_flex_router_get.
+=== Running test /tmp/root/verif/awm_earth/test_flex_router_get/test_flex_router_get ...
+
+NetFPGA environment:
+  Root dir:       /home/netfpga/NF2
+  Project name:   awm_earth
+  Project dir:    /home/netfpga/NF2/projects/awm_earth
+  Work dir:       /tmp/root
+
+--- Reading configuration file
+Seen: test_desc => NF 2.1 flex router
+Seen: finish => 160000
+--- Running test.
+NF 2.1 flex router
+--- Generating packets...
+
+NetFPGA environment:
+  Root dir:       /home/netfpga/NF2
+  Project name:   awm_earth
+  Project dir:    /home/netfpga/NF2/projects/awm_earth
+  Work dir:       /tmp/root
+
+--- make_pkts.pl: Generated all configuration packets.
+--- make_pkts.pl: Last packet enters system at approx 91 microseconds.
+--- Running the simulation (takes a while). Logging to my_sim.log
+--- Running vsim
+Reading /home/netfpga/modeltech/tcl/vsim/pref.tcl 
+
+# 6.2g
+
+# vsim -do {run -all} -l my_sim.log -c -voptargs=+acc testbench glbl 
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# //  ModelSim SE 6.2g Feb 21 2007 Linux 2.6.18-164.el5
+# //
+# //  Copyright 1991-2007 Mentor Graphics Corporation
+# //              All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND 
+# //  PROPRIETARY INFORMATION WHICH IS THE PROPERTY
+# //  OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
+# //  AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.glbl(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.testbench(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.u_board(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.cpci_top(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.cpci_clock_checker(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.BUFGDLL(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.CLKDLL(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.clkdll_maximum_period_check(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.IBUFG(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.BUFG(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.pcim_top(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.pcim_lc(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.IOBUF_PCI33_3(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.FDPE(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.OBUFT_PCI33_3(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.IBUF_PCI33_3(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.IBUFG_PCI33_3(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.PCI_LC_I(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.X_INV(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.X_BUF(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.X_OR2(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.X_AND2(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.X_OR3(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.X_AND3(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.X_FF(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.X_FF(fast__1)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.X_PU(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.X_AND4(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.X_MUX2(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.X_ZERO(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.X_OR4(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.X_ONE(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.X_AND5(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.X_XOR2(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.X_TRI(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.X_XOR4(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.X_XOR3(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.cfg(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.pci_userapp(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.reg_file(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.cnet_reg_access(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.cnet_reg_iface(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.cpci_pci2net_16x60(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.FIFO_GENERATOR_V3_3(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.fifo_generator_v3_3_bhv_ver_as(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.cnet_reprogram(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.fifo_8x32(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.cnet_dma_bus_master(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.pci2net_dma_16x32(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.FIFO_GENERATOR_V3_3(fast__1)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.fifo_generator_v3_3_bhv_ver_as(fast__1)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.fifo_generator_v3_3_bhv_ver_preload0(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.net2pci_dma_512x32(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.FIFO_GENERATOR_V3_3(fast__2)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.fifo_generator_v3_3_bhv_ver_as(fast__2)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.dma_engine(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.dma_read_fifo_4x32(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.dma_engine_ctrl(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.dma_engine_rr_arb(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.dma_engine_pci_xfer(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.dma_engine_alignment(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.dma_engine_cntr(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.cpci_heartbeat(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.nf2_top(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.IBUF(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.DCM(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.dcm_clock_divide_by_2(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.dcm_maximum_period_check(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.dcm_maximum_period_check(fast__1)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.dcm_clock_lost(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.BUFGMUX(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.rgmii_io(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.FDDRRSE(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.OBUF(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.nf2_core(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.nf2_mac_grp(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.tri_mode_eth_mac(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.VCC(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.GND(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.FDCE(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.LUT2(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.FDC(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.INV(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.FD(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.SRL16(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.FDE(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.SRL16E(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.LUT4_L(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.LUT4_D(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.LUT3_L(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.LUT3_D(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.LUT2_D(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.LUT2_D(fast__1)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.LUT2_D(fast__2)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.LUT2_L(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.LUT2_D(fast__3)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.LUT2_L(fast__1)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.LUT2_D(fast__4)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.LUT2_L(fast__2)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.LUT2_D(fast__5)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.LUT2_D(fast__6)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.MUXF5(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.LUT4(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.LUT3(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.LUT2(fast__1)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.FDCPE(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.LUT2(fast__2)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.LUT2(fast__3)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.LUT2(fast__4)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.LUT1(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.LUT2(fast__5)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.LUT2(fast__6)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.LUT2(fast__7)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.LUT2(fast__8)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.LUT2(fast__9)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.MUXCY(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.FDP(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.FDRE(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.XORCY(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.FDPE(fast__1)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.MUXCY_L(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.AND2(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.rx_queue(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.rxlengthfifo_128x13(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.FIFO_GENERATOR_V3_2(fast__3)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.fifo_generator_v3_2_bhv_ver_as(fast__3)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.rxfifo_8kx9_to_72(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.FIFO_GENERATOR_V3_2(fast__2)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.fifo_generator_v3_2_bhv_ver_as(fast__2)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.pulse_synchronizer(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.tx_queue(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.txfifo_512x72_to_9(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.FIFO_GENERATOR_V3_3(fast__5)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.fifo_generator_v3_3_bhv_ver_as(fast__3)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.mac_grp_regs(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.nf2_mac_grp(fast__1)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.rx_queue(fast__1)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.nf2_mac_grp(fast__2)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.rx_queue(fast__2)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.nf2_mac_grp(fast__3)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.rx_queue(fast__3)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.cpu_dma_queue(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.cpu_dma_queue_main(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.async_fifo_256x72_to_36(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.FIFO_GENERATOR_V3_3(fast__6)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.fifo_generator_v3_3_bhv_ver_as(fast__4)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.fifo_generator_v3_3_bhv_ver_preload0(fast__1)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.async_fifo_512x36_to_72_progfull_500(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.FIFO_GENERATOR_V3_3(fast__7)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.fifo_generator_v3_3_bhv_ver_as(fast__5)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.fifo_generator_v3_3_bhv_ver_preload0(fast__2)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.cpu_dma_queue_regs(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.add_rm_hdr(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.add_hdr(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.hdr_fifo(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.FIFO_GENERATOR_V3_2(fast__4)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.fifo_generator_v3_2_bhv_ver_ss(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.rm_hdr(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.add_rm_hdr(fast__1)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.add_hdr(fast__1)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.add_rm_hdr(fast__2)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.add_hdr(fast__2)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.add_rm_hdr(fast__3)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.add_hdr(fast__3)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.cpci_bus(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.pci2net_16x60(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.FIFO_GENERATOR_V3_2(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.fifo_generator_v3_2_bhv_ver_as(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.net2pci_16x32(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.FIFO_GENERATOR_V3_2(fast__1)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.fifo_generator_v3_2_bhv_ver_as(fast__1)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.fifo_generator_v3_2_bhv_ver_preload0(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.sram_arbiter(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.cnet_sram_sm(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.sram_reg_access(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.user_data_path(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.input_arbiter(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.small_fifo(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.in_arb_regs(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.rate_wp3(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.small_fifo(fast__1)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.output_port_lookup(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.fallthrough_small_fifo(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.small_fifo(fast__2)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.preprocess_control(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.eth_parser(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.fallthrough_small_fifo(fast__1)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.small_fifo(fast__3)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.ip_lpm(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.srl_cam_unencoded_32x32(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.CAM_V5_1(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.unencoded_cam_lut_sm(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.ip_arp(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.bram_cam_unencoded_32x32(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.CAM_V5_1(fast__1)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.unencoded_cam_lut_sm(fast__1)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.fallthrough_small_fifo(fast__2)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.small_fifo(fast__4)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.dest_ip_filter(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.unencoded_cam_lut_sm(fast__2)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.fallthrough_small_fifo(fast__3)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.small_fifo(fast__5)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.ip_checksum_ttl(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.fallthrough_small_fifo(fast__4)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.small_fifo(fast__6)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.op_lut_hdr_parser(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.op_lut_process_sm(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.router_op_lut_regs(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.router_op_lut_regs_non_cntr(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.router_op_lut_regs_cntr(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.generic_cntr_regs(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.awm_earth(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.fallthrough_small_fifo(fast__5)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.generic_regs(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.generic_sw_regs(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.awm_earth_core(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.div_uu(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.output_queues(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.oq_header_parser(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.fallthrough_small_fifo(fast__6)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.small_fifo(fast__7)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.fallthrough_small_fifo(fast__7)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.small_fifo(fast__8)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.store_pkt(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.remove_pkt(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.syncfifo_512x72(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.FIFO_GENERATOR_V3_3(fast__3)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.fifo_generator_v3_3_bhv_ver_ss(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.oq_regs(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.oq_regs_ctrl(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.oq_regs_eval_empty(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.oq_regs_eval_full(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.oq_regs_host_iface(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.oq_reg_instances(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.oq_regs_generic_reg_grp(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.oq_regs_dual_port_ram(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.oq_regs_generic_reg_grp(fast__1)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.oq_regs_generic_reg_grp(fast__2)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.oq_regs_dual_port_ram(fast__1)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.oq_regs_generic_reg_grp(fast__3)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.oq_regs_generic_reg_grp(fast__4)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.oq_regs_dual_port_ram(fast__2)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.oq_regs_generic_reg_grp(fast__5)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.oq_regs_generic_reg_grp(fast__6)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.oq_regs_generic_reg_grp(fast__7)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.rate_limiter(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.rate_limiter_regs(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.rate_limiter(fast__1)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.rate_limiter_regs(fast__1)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.rate_limiter(fast__2)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.rate_limiter_regs(fast__2)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.rate_limiter(fast__3)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.rate_limiter_regs(fast__3)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.udp_reg_master(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.nf2_reg_grp(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.reg_grp(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.reg_grp(fast__1)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.device_id_reg(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.nf2_mdio(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.nf2_dma(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.nf2_dma_bus_fsm(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.syncfifo_512x32(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.FIFO_GENERATOR_V3_3(fast__4)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.fifo_generator_v3_3_bhv_ver_ss(fast__1)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.nf2_dma_sync(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.small_async_fifo(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.sync_r2w(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.sync_w2r(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.fifo_mem(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.rptr_empty(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.wptr_full(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.small_async_fifo(fast__1)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.fifo_mem(fast__1)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.nf2_dma_que_intfc(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.unused_reg(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.unused_reg(fast__1)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.cpci_program_iface(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.cy7c1370(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.ddr2(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.phy_mdio_port(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.host32(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.target32(fast)
+# Loading /tmp/root/verif/awm_earth/vsim_beh/work.net(fast)
+# ** Warning: (vsim-3017) /home/netfpga/NF2/projects/awm_earth/src/output_port_lookup.v(538): [TFMPC] - Too few port connections. Expected 61, found 60.
+#         Region: /testbench/u_board/nf2_top/nf2_core/user_data_path/output_port_lookup/op_lut_regs
+# ** Warning: (vsim-3722) /home/netfpga/NF2/projects/awm_earth/src/output_port_lookup.v(538): [TFMPC] - Missing connection for port 'clk_ena'.
+# ** Warning: (vsim-3015) /home/netfpga/NF2/lib/verilog/output_port_lookup/cam_router/src/router_op_lut_regs_cntr.v(88): [PCDPC] - Port size (10 or 10) does not match connection size (32) for port 'decrement'.
+#         Region: /testbench/u_board/nf2_top/nf2_core/user_data_path/output_port_lookup/op_lut_regs/router_op_lut_regs_cntr/generic_cntr_regs
+# ** Warning: (vsim-3017) /home/netfpga/NF2/projects/awm_earth/src/awm_earth.v(144): [TFMPC] - Too few port connections. Expected 10, found 9.
+#         Region: /testbench/u_board/nf2_top/nf2_core/user_data_path/awm_earth/input_fifo
+# ** Warning: (vsim-3722) /home/netfpga/NF2/projects/awm_earth/src/awm_earth.v(144): [TFMPC] - Missing connection for port 'prog_full'.
+# ** Warning: (vsim-3015) /home/netfpga/NF2/projects/awm_earth/src/awm_earth.v(198): [PCDPC] - Port size (16 or 16) does not match connection size (32) for port 'queue'.
+#         Region: /testbench/u_board/nf2_top/nf2_core/user_data_path/awm_earth/awm_earth_core0
+# ** Warning: (vsim-3015) /home/netfpga/NF2/projects/awm_earth/src/awm_earth.v(198): [PCDPC] - Port size (16 or 16) does not match connection size (32) for port 'queue_old'.
+#         Region: /testbench/u_board/nf2_top/nf2_core/user_data_path/awm_earth/awm_earth_core0
+# ** Warning: (vsim-3015) /home/netfpga/NF2/projects/awm_earth/src/awm_earth_core.v(75): [PCDPC] - Port size (16 or 16) does not match connection size (32) for port 'd'.
+#         Region: /testbench/u_board/nf2_top/nf2_core/user_data_path/awm_earth/awm_earth_core0/div_awm1
+# run -all 
+# Warning in testbench.u_board.cpci_top.cnet_reg_iface.cpci_pci2net_fifo.inst at time                    0: When using an asynchronous configuration for the FIFO Generator, the behavioral model is not cycle-accurate. You may wish to choose the structural simulation model instead of the behavioral model. This will ensure accurate behavior and latencies during simulation. You can enable this from CORE Generator by selecting Project -> Project Options -> Generation tab -> Structural Simulation. See the FIFO Generator User Guide for more information.
+# Warning in testbench.u_board.cpci_top.cnet_dma_bus_master.pci2net_dma_fifo.inst at time                    0: When using an asynchronous configuration for the FIFO Generator, the behavioral model is not cycle-accurate. You may wish to choose the structural simulation model instead of the behavioral model. This will ensure accurate behavior and latencies during simulation. You can enable this from CORE Generator by selecting Project -> Project Options -> Generation tab -> Structural Simulation. See the FIFO Generator User Guide for more information.
+# Warning in testbench.u_board.cpci_top.cnet_dma_bus_master.dma_rx_fifo.inst at time                    0: When using an asynchronous configuration for the FIFO Generator, the behavioral model is not cycle-accurate. You may wish to choose the structural simulation model instead of the behavioral model. This will ensure accurate behavior and latencies during simulation. You can enable this from CORE Generator by selecting Project -> Project Options -> Generation tab -> Structural Simulation. See the FIFO Generator User Guide for more information.
+# Warning in testbench.u_board.nf2_top.nf2_core.mac_groups[0].nf2_mac_grp.rx_queue.genblk2.pkt_chk_fifo.inst at time                    0: When using an asynchronous configuration for the FIFO Generator, the behavioral model is not cycle-accurate. You may wish to choose the structural simulation model instead of the behavioral model. This will ensure accurate behavior and latencies during simulation. You can enable this from CORE Generator by selecting Project -> Project Options -> Generation tab -> Structural Simulation. See the FIFO Generator User Guide for more information.
+# Warning in testbench.u_board.nf2_top.nf2_core.mac_groups[0].nf2_mac_grp.rx_queue.rx_fifo_64.gmac_rx_fifo.inst at time                    0: When using an asynchronous configuration for the FIFO Generator, the behavioral model is not cycle-accurate. You may wish to choose the structural simulation model instead of the behavioral model. This will ensure accurate behavior and latencies during simulation. You can enable this from CORE Generator by selecting Project -> Project Options -> Generation tab -> Structural Simulation. See the FIFO Generator User Guide for more information.
+# Warning in testbench.u_board.nf2_top.nf2_core.mac_groups[0].nf2_mac_grp.tx_queue.tx_fifo_64.gmac_tx_fifo.inst at time                    0: When using an asynchronous configuration for the FIFO Generator, the behavioral model is not cycle-accurate. You may wish to choose the structural simulation model instead of the behavioral model. This will ensure accurate behavior and latencies during simulation. You can enable this from CORE Generator by selecting Project -> Project Options -> Generation tab -> Structural Simulation. See the FIFO Generator User Guide for more information.
+# Warning in testbench.u_board.nf2_top.nf2_core.mac_groups[1].nf2_mac_grp.rx_queue.genblk2.pkt_chk_fifo.inst at time                    0: When using an asynchronous configuration for the FIFO Generator, the behavioral model is not cycle-accurate. You may wish to choose the structural simulation model instead of the behavioral model. This will ensure accurate behavior and latencies during simulation. You can enable this from CORE Generator by selecting Project -> Project Options -> Generation tab -> Structural Simulation. See the FIFO Generator User Guide for more information.
+# Warning in testbench.u_board.nf2_top.nf2_core.mac_groups[1].nf2_mac_grp.rx_queue.rx_fifo_64.gmac_rx_fifo.inst at time                    0: When using an asynchronous configuration for the FIFO Generator, the behavioral model is not cycle-accurate. You may wish to choose the structural simulation model instead of the behavioral model. This will ensure accurate behavior and latencies during simulation. You can enable this from CORE Generator by selecting Project -> Project Options -> Generation tab -> Structural Simulation. See the FIFO Generator User Guide for more information.
+# Warning in testbench.u_board.nf2_top.nf2_core.mac_groups[1].nf2_mac_grp.tx_queue.tx_fifo_64.gmac_tx_fifo.inst at time                    0: When using an asynchronous configuration for the FIFO Generator, the behavioral model is not cycle-accurate. You may wish to choose the structural simulation model instead of the behavioral model. This will ensure accurate behavior and latencies during simulation. You can enable this from CORE Generator by selecting Project -> Project Options -> Generation tab -> Structural Simulation. See the FIFO Generator User Guide for more information.
+# Warning in testbench.u_board.nf2_top.nf2_core.mac_groups[2].nf2_mac_grp.rx_queue.genblk2.pkt_chk_fifo.inst at time                    0: When using an asynchronous configuration for the FIFO Generator, the behavioral model is not cycle-accurate. You may wish to choose the structural simulation model instead of the behavioral model. This will ensure accurate behavior and latencies during simulation. You can enable this from CORE Generator by selecting Project -> Project Options -> Generation tab -> Structural Simulation. See the FIFO Generator User Guide for more information.
+# Warning in testbench.u_board.nf2_top.nf2_core.mac_groups[2].nf2_mac_grp.rx_queue.rx_fifo_64.gmac_rx_fifo.inst at time                    0: When using an asynchronous configuration for the FIFO Generator, the behavioral model is not cycle-accurate. You may wish to choose the structural simulation model instead of the behavioral model. This will ensure accurate behavior and latencies during simulation. You can enable this from CORE Generator by selecting Project -> Project Options -> Generation tab -> Structural Simulation. See the FIFO Generator User Guide for more information.
+# Warning in testbench.u_board.nf2_top.nf2_core.mac_groups[2].nf2_mac_grp.tx_queue.tx_fifo_64.gmac_tx_fifo.inst at time                    0: When using an asynchronous configuration for the FIFO Generator, the behavioral model is not cycle-accurate. You may wish to choose the structural simulation model instead of the behavioral model. This will ensure accurate behavior and latencies during simulation. You can enable this from CORE Generator by selecting Project -> Project Options -> Generation tab -> Structural Simulation. See the FIFO Generator User Guide for more information.
+# Warning in testbench.u_board.nf2_top.nf2_core.mac_groups[3].nf2_mac_grp.rx_queue.genblk2.pkt_chk_fifo.inst at time                    0: When using an asynchronous configuration for the FIFO Generator, the behavioral model is not cycle-accurate. You may wish to choose the structural simulation model instead of the behavioral model. This will ensure accurate behavior and latencies during simulation. You can enable this from CORE Generator by selecting Project -> Project Options -> Generation tab -> Structural Simulation. See the FIFO Generator User Guide for more information.
+# Warning in testbench.u_board.nf2_top.nf2_core.mac_groups[3].nf2_mac_grp.rx_queue.rx_fifo_64.gmac_rx_fifo.inst at time                    0: When using an asynchronous configuration for the FIFO Generator, the behavioral model is not cycle-accurate. You may wish to choose the structural simulation model instead of the behavioral model. This will ensure accurate behavior and latencies during simulation. You can enable this from CORE Generator by selecting Project -> Project Options -> Generation tab -> Structural Simulation. See the FIFO Generator User Guide for more information.
+# Warning in testbench.u_board.nf2_top.nf2_core.mac_groups[3].nf2_mac_grp.tx_queue.tx_fifo_64.gmac_tx_fifo.inst at time                    0: When using an asynchronous configuration for the FIFO Generator, the behavioral model is not cycle-accurate. You may wish to choose the structural simulation model instead of the behavioral model. This will ensure accurate behavior and latencies during simulation. You can enable this from CORE Generator by selecting Project -> Project Options -> Generation tab -> Structural Simulation. See the FIFO Generator User Guide for more information.
+# Warning in testbench.u_board.nf2_top.nf2_core.cpu_queues[0].cpu_dma_queue_i.cpu_dma_queue_main.cpu_fifos64.rx_fifo.inst at time                    0: When using an asynchronous configuration for the FIFO Generator, the behavioral model is not cycle-accurate. You may wish to choose the structural simulation model instead of the behavioral model. This will ensure accurate behavior and latencies during simulation. You can enable this from CORE Generator by selecting Project -> Project Options -> Generation tab -> Structural Simulation. See the FIFO Generator User Guide for more information.
+# Warning in testbench.u_board.nf2_top.nf2_core.cpu_queues[0].cpu_dma_queue_i.cpu_dma_queue_main.cpu_fifos64.tx_fifo.inst at time                    0: When using an asynchronous configuration for the FIFO Generator, the behavioral model is not cycle-accurate. You may wish to choose the structural simulation model instead of the behavioral model. This will ensure accurate behavior and latencies during simulation. You can enable this from CORE Generator by selecting Project -> Project Options -> Generation tab -> Structural Simulation. See the FIFO Generator User Guide for more information.
+# Warning in testbench.u_board.nf2_top.nf2_core.cpu_queues[1].cpu_dma_queue_i.cpu_dma_queue_main.cpu_fifos64.rx_fifo.inst at time                    0: When using an asynchronous configuration for the FIFO Generator, the behavioral model is not cycle-accurate. You may wish to choose the structural simulation model instead of the behavioral model. This will ensure accurate behavior and latencies during simulation. You can enable this from CORE Generator by selecting Project -> Project Options -> Generation tab -> Structural Simulation. See the FIFO Generator User Guide for more information.
+# Warning in testbench.u_board.nf2_top.nf2_core.cpu_queues[1].cpu_dma_queue_i.cpu_dma_queue_main.cpu_fifos64.tx_fifo.inst at time                    0: When using an asynchronous configuration for the FIFO Generator, the behavioral model is not cycle-accurate. You may wish to choose the structural simulation model instead of the behavioral model. This will ensure accurate behavior and latencies during simulation. You can enable this from CORE Generator by selecting Project -> Project Options -> Generation tab -> Structural Simulation. See the FIFO Generator User Guide for more information.
+# Warning in testbench.u_board.nf2_top.nf2_core.cpu_queues[2].cpu_dma_queue_i.cpu_dma_queue_main.cpu_fifos64.rx_fifo.inst at time                    0: When using an asynchronous configuration for the FIFO Generator, the behavioral model is not cycle-accurate. You may wish to choose the structural simulation model instead of the behavioral model. This will ensure accurate behavior and latencies during simulation. You can enable this from CORE Generator by selecting Project -> Project Options -> Generation tab -> Structural Simulation. See the FIFO Generator User Guide for more information.
+# Warning in testbench.u_board.nf2_top.nf2_core.cpu_queues[2].cpu_dma_queue_i.cpu_dma_queue_main.cpu_fifos64.tx_fifo.inst at time                    0: When using an asynchronous configuration for the FIFO Generator, the behavioral model is not cycle-accurate. You may wish to choose the structural simulation model instead of the behavioral model. This will ensure accurate behavior and latencies during simulation. You can enable this from CORE Generator by selecting Project -> Project Options -> Generation tab -> Structural Simulation. See the FIFO Generator User Guide for more information.
+# Warning in testbench.u_board.nf2_top.nf2_core.cpu_queues[3].cpu_dma_queue_i.cpu_dma_queue_main.cpu_fifos64.rx_fifo.inst at time                    0: When using an asynchronous configuration for the FIFO Generator, the behavioral model is not cycle-accurate. You may wish to choose the structural simulation model instead of the behavioral model. This will ensure accurate behavior and latencies during simulation. You can enable this from CORE Generator by selecting Project -> Project Options -> Generation tab -> Structural Simulation. See the FIFO Generator User Guide for more information.
+# Warning in testbench.u_board.nf2_top.nf2_core.cpu_queues[3].cpu_dma_queue_i.cpu_dma_queue_main.cpu_fifos64.tx_fifo.inst at time                    0: When using an asynchronous configuration for the FIFO Generator, the behavioral model is not cycle-accurate. You may wish to choose the structural simulation model instead of the behavioral model. This will ensure accurate behavior and latencies during simulation. You can enable this from CORE Generator by selecting Project -> Project Options -> Generation tab -> Structural Simulation. See the FIFO Generator User Guide for more information.
+# Warning in testbench.u_board.nf2_top.nf2_core.cpci_bus.pci2net_fifo.inst at time                    0: When using an asynchronous configuration for the FIFO Generator, the behavioral model is not cycle-accurate. You may wish to choose the structural simulation model instead of the behavioral model. This will ensure accurate behavior and latencies during simulation. You can enable this from CORE Generator by selecting Project -> Project Options -> Generation tab -> Structural Simulation. See the FIFO Generator User Guide for more information.
+# Warning in testbench.u_board.nf2_top.nf2_core.cpci_bus.net2pci_fifo.inst at time                    0: When using an asynchronous configuration for the FIFO Generator, the behavioral model is not cycle-accurate. You may wish to choose the structural simulation model instead of the behavioral model. This will ensure accurate behavior and latencies during simulation. You can enable this from CORE Generator by selecting Project -> Project Options -> Generation tab -> Structural Simulation. See the FIFO Generator User Guide for more information.
+# NOTICE      : 020 : Data bus    corruption
+# NOTICE      : 016 : ADV_LB   corruption
+# NOTICE      : 015 : CENB      corruption
+# NOTICE      : 014 : CE3B      corruption
+# NOTICE      : 013 : CE2       corruption
+# NOTICE      : 012 : CE1B       corruption
+# NOTICE      : 011 : Byte enable corruption
+# NOTICE      : 010 : Byte write  corruption
+# NOTICE      : 020 : Data bus    corruption
+# NOTICE      : 016 : ADV_LB   corruption
+# NOTICE      : 015 : CENB      corruption
+# NOTICE      : 014 : CE3B      corruption
+# NOTICE      : 013 : CE2       corruption
+# NOTICE      : 012 : CE1B       corruption
+# NOTICE      : 011 : Byte enable corruption
+# NOTICE      : 010 : Byte write  corruption
+# Read Configuration file config.sim
+#     Finish time is 160000.00ns.
+#     2.00ns testbench.net1.initialize_ingress Info: Reading ingress packet data from file packet_data/ingress_port_1
+#     2.00ns testbench.net2.initialize_ingress Info: Reading ingress packet data from file packet_data/ingress_port_2
+#     2.00ns testbench.net3.initialize_ingress Info: Reading ingress packet data from file packet_data/ingress_port_3
+#     2.00ns testbench.net4.initialize_ingress Info: Reading ingress packet data from file packet_data/ingress_port_4
+#     3.00ns testbench.net1.check_integrity Info: There will be 3 ingress packets.
+#     3.00ns testbench.net1 Info: Waiting for initial configuration to complete.
+#     3.00ns testbench.net2.check_integrity Info: There will be 0 ingress packets.
+#     3.00ns testbench.net2 Info: Waiting for initial configuration to complete.
+#     3.00ns testbench.net3.check_integrity Info: There will be 0 ingress packets.
+#     3.00ns testbench.net3 Info: Waiting for initial configuration to complete.
+#     3.00ns testbench.net4.check_integrity Info: There will be 0 ingress packets.
+#     3.00ns testbench.net4 Info: Waiting for initial configuration to complete.
+#  
+#                  300   System Reset Complete...
+#  
+#                  465   Operating System Configuring Device...
+#  
+#                  465   Searching for device.
+#                  645   Host read  0x00010000 with cmd 0xa:  Disconnect with Data, 0x0001feed.
+#                  705   NF2 Device Found.
+#                  705   BAR0:
+#                  885   Host read  0x00010010 with cmd 0xa:  Disconnect with Data, 0x00000000.
+#                  945   BAR0 of expected type exists.
+#                  945   Checking size of BAR0.
+#                 1335   Host read  0x00010010 with cmd 0xa:  Disconnect with Data, 0xf8000000.
+#                 1395   Device requests 0x08000000 bytes.
+#                 1395   Locating device at 0x00000000.
+#                 1605   BAR1:
+#                 1785   Host read  0x00010014 with cmd 0xa:  Disconnect with Data, 0x00000000.
+#                 1845   BAR1 of expected type exists.
+#                 1845   Checking size of BAR1.
+#                 2235   Host read  0x00010014 with cmd 0xa:  Disconnect with Data, 0x00000000.
+#                 2295   Device requests 0x00000000 bytes.
+#                 2295   BAR2:
+#                 2475   Host read  0x00010018 with cmd 0xa:  Disconnect with Data, 0x00000000.
+#                 2535   BAR2 of expected type exists.
+#                 2535   Checking size of BAR2.
+#                 2925   Host read  0x00010018 with cmd 0xa:  Disconnect with Data, 0x00000000.
+#                 2985   Device requests 0x00000000 bytes.
+#                 2985   Setting Latency Timer to 0xff.
+#                 3195   Enabling Mem Space and Bus Master.
+#                 3585   Host read  0x00010004 with cmd 0xa:  Disconnect with Data, 0x02000146.
+#                 3645   Operating System Configuring Done
+#  
+#  
+#  3645.00ns testbench.host32.process_PCI_requests: Info: Waiting until time  5500.00ns to execute next PCI access.
+#  3645.00ns testbench.net4 Info: Forking ingess, egress and finish jobs.
+#  3645.00ns testbench.net3 Info: Forking ingess, egress and finish jobs.
+#  3645.00ns testbench.net2 Info: Forking ingess, egress and finish jobs.
+#  3645.00ns testbench.net1 Info: Forking ingess, egress and finish jobs.
+#  3645.00ns testbench.net1.handle_ingress Info: Waiting until time 40000.00ns to send packet (length 168)
+#  3645.00ns System appears to be up.
+#  5505.00ns testbench.host32.process_PCI_requests: Info: Starting PCI Write data 0x00003e80 to address 0x02000204
+#  5745.00ns testbench.host32.process_PCI_requests: Info: Waiting until time  7760.00ns to execute next PCI access.
+#  7785.00ns testbench.host32.process_PCI_requests: Info: Starting PCI Write data 0x00000001 to address 0x02000208
+#  8025.00ns testbench.host32.process_PCI_requests: Info: Starting PCI Write data 0x00000000 to address 0x00000008
+#  8265.00ns testbench.host32.process_PCI_requests: Info: Waiting until time  8280.00ns to execute next PCI access.
+#  8295.00ns testbench.host32.process_PCI_requests: Info: Starting PCI Write data 0x00000000 to address 0x00000040
+#  8535.00ns testbench.host32.process_PCI_requests: Info: Waiting until time  8540.00ns to execute next PCI access.
+#  8565.00ns testbench.host32.process_PCI_requests: Info: Starting PCI Write data 0x0000cafe to address 0x02000028
+#  8805.00ns testbench.host32.process_PCI_requests: Info: Starting PCI Write data 0xf00d0001 to address 0x0200002c
+#  9045.00ns testbench.host32.process_PCI_requests: Info: Waiting until time  9060.00ns to execute next PCI access.
+#  9075.00ns testbench.host32.process_PCI_requests: Info: Starting PCI Write data 0x0000cafe to address 0x02000030
+#  9315.00ns testbench.host32.process_PCI_requests: Info: Waiting until time  9320.00ns to execute next PCI access.
+#  9345.00ns testbench.host32.process_PCI_requests: Info: Starting PCI Write data 0xf00d0002 to address 0x02000034
+#  9585.00ns testbench.host32.process_PCI_requests: Info: Starting PCI Write data 0x0000cafe to address 0x02000038
+#  9825.00ns testbench.host32.process_PCI_requests: Info: Waiting until time  9840.00ns to execute next PCI access.
+#  9855.00ns testbench.host32.process_PCI_requests: Info: Starting PCI Write data 0xf00d0003 to address 0x0200003c
+# 10095.00ns testbench.host32.process_PCI_requests: Info: Waiting until time 10100.00ns to execute next PCI access.
+# 10125.00ns testbench.host32.process_PCI_requests: Info: Starting PCI Write data 0x0000cafe to address 0x02000040
+# 10365.00ns testbench.host32.process_PCI_requests: Info: Starting PCI Write data 0xf00d0004 to address 0x02000044
+# 10605.00ns testbench.host32.process_PCI_requests: Info: Waiting until time 10620.00ns to execute next PCI access.
+# 10635.00ns testbench.host32.process_PCI_requests: Info: Starting PCI Write data 0xc0a80101 to address 0x02000074
+# 10875.00ns testbench.host32.process_PCI_requests: Info: Waiting until time 10880.00ns to execute next PCI access.
+# 10905.00ns testbench.host32.process_PCI_requests: Info: Starting PCI Write data 0x00000000 to address 0x0200007c
+# 11145.00ns testbench.host32.process_PCI_requests: Info: Starting PCI Write data 0xc0a80201 to address 0x02000074
+# 11385.00ns testbench.host32.process_PCI_requests: Info: Waiting until time 11400.00ns to execute next PCI access.
+# 11415.00ns testbench.host32.process_PCI_requests: Info: Starting PCI Write data 0x00000001 to address 0x0200007c
+# 11655.00ns testbench.host32.process_PCI_requests: Info: Waiting until time 11660.00ns to execute next PCI access.
+# 11685.00ns testbench.host32.process_PCI_requests: Info: Starting PCI Write data 0xc0a80301 to address 0x02000074
+# 11925.00ns testbench.host32.process_PCI_requests: Info: Starting PCI Write data 0x00000002 to address 0x0200007c
+# 12165.00ns testbench.host32.process_PCI_requests: Info: Waiting until time 12180.00ns to execute next PCI access.
+# 12195.00ns testbench.host32.process_PCI_requests: Info: Starting PCI Write data 0xc0a80401 to address 0x02000074
+# 12435.00ns testbench.host32.process_PCI_requests: Info: Waiting until time 12440.00ns to execute next PCI access.
+# 12465.00ns testbench.host32.process_PCI_requests: Info: Starting PCI Write data 0x00000003 to address 0x0200007c
+# 12705.00ns testbench.host32.process_PCI_requests: Info: Starting PCI Write data 0xc0a80200 to address 0x02000048
+# 12945.00ns testbench.host32.process_PCI_requests: Info: Waiting until time 12960.00ns to execute next PCI access.
+# 12975.00ns testbench.host32.process_PCI_requests: Info: Starting PCI Write data 0xffffff00 to address 0x0200004c
+# 13215.00ns testbench.host32.process_PCI_requests: Info: Waiting until time 13220.00ns to execute next PCI access.
+# 13245.00ns testbench.host32.process_PCI_requests: Info: Starting PCI Write data 0xc0a80202 to address 0x02000050
+# 13485.00ns testbench.host32.process_PCI_requests: Info: Starting PCI Write data 0x00000004 to address 0x02000054
+# Timecheck: 13645.00ns
+# 13725.00ns testbench.host32.process_PCI_requests: Info: Waiting until time 13740.00ns to execute next PCI access.
+# 13755.00ns testbench.host32.process_PCI_requests: Info: Starting PCI Write data 0x00000000 to address 0x0200005c
+# 13995.00ns testbench.host32.process_PCI_requests: Info: Waiting until time 14000.00ns to execute next PCI access.
+# 14025.00ns testbench.host32.process_PCI_requests: Info: Starting PCI Write data 0xc0a80202 to address 0x02000068
+# 14265.00ns testbench.host32.process_PCI_requests: Info: Starting PCI Write data 0x000000fe to address 0x02000060
+# 14505.00ns testbench.host32.process_PCI_requests: Info: Waiting until time 14520.00ns to execute next PCI access.
+# 14535.00ns testbench.host32.process_PCI_requests: Info: Starting PCI Write data 0xed02d065 to address 0x02000064
+# 14775.00ns testbench.host32.process_PCI_requests: Info: Waiting until time 14780.00ns to execute next PCI access.
+# 14805.00ns testbench.host32.process_PCI_requests: Info: Starting PCI Write data 0x00000000 to address 0x02000070
+# Timecheck: 23645.00ns
+# Timecheck: 33645.00ns
+# 40000.00ns testbench.net1.handle_ingress Sending next ingress packet (len 168) to NF2.
+# 41529.00ns testbench.net1.handle_ingress Info: Waiting until time 90000.00ns to send packet (length 168)
+# PORT:    x
+# PORT:    4
+# WORD2
+# WORD2
+# WORD2
+# WORD3
+# WORD3
+# WORD3
+# WORD4
+# WORD4
+# Timecheck: 43645.00ns
+# Timecheck: 53645.00ns
+# Timecheck: 63645.00ns
+# Timecheck: 73645.00ns
+# Timecheck: 83645.00ns
+# 90000.00ns testbench.net1.handle_ingress Sending next ingress packet (len 168) to NF2.
+# 91529.00ns testbench.net1.handle_ingress Sending next ingress packet (len 168) to NF2.
+# Timecheck: 93645.00ns
+# Timecheck: 103645.00ns
+# Timecheck: 113645.00ns
+# Timecheck: 123645.00ns
+# Timecheck: 133645.00ns
+# Timecheck: 143645.00ns
+# Timecheck: 153645.00ns
+#               160100 Simulation has reached finish time - ending.
+# ** Note: $finish    : /home/netfpga/NF2/lib/verilog/core/testbench/target32.v(616)
+#    Time: 160100 ns  Iteration: 0  Instance: /testbench/target32
+--- Simulation is complete. Validating the output.
+	Comparing simulation output for port 1 ...
+	Port 1 matches [0 packets]
+	Comparing simulation output for port 2 ...
+	ERROR: Number of packets mismatch: expected 2 but saw 0
+	Port 2 saw 1 errors.
+
+	Comparing simulation output for port 3 ...
+	Port 3 matches [0 packets]
+	Comparing simulation output for port 4 ...
+	Port 4 matches [0 packets]
+	Comparing simulation output for DMA queue 1 ...
+	DMA queue 1 matches [0 packets]
+	Comparing simulation output for DMA queue 2 ...
+	DMA queue 2 matches [0 packets]
+	Comparing simulation output for DMA queue 3 ...
+	DMA queue 3 matches [0 packets]
+	Comparing simulation output for DMA queue 4 ...
+	DMA queue 4 matches [0 packets]
+--- Test failed (test_flex_router_get) - expected and seen data differs.
+Error: test test_flex_router_get failed!
+------------SUMMARY---------------
+PASSING TESTS: 
+FAILING TESTS: 
+		test_flex_router_get
+TOTAL: 1 PASS: 0  FAIL: 1

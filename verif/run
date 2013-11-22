@@ -1,0 +1,5 @@
+rm nohup.out
+export NF2_DESIGN_DIR=/home/netfpga/NF2/projects/awm_earth/
+nohup nf2_run_test.pl --major flex_router &
+#sleep 1
+#tail nohup.out -f

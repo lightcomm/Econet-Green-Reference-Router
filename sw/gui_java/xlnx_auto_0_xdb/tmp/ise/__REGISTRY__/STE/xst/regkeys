@@ -1,0 +1,6 @@
+CommandLine
+/opt/Xilinx/10.1/ISE/bin/lin/unwrapped/xst -ifn /proj/ipco/users/rstuber/IPHsandbox/env/Databases/ip/src2/K/srio_v4_4/delivery/example_design/rocketio_wrapper/v4/coregen/tmp/_cg/_bbx/tri_mode_eth_mac_v3_5_trimac_gen_1.scr -ofn /proj/ipco/users/rstuber/IPHsandbox/env/Databases/ip/src2/K/srio_v4_4/delivery/example_design/rocketio_wrapper/v4/coregen/tmp/_cg/_bbx/tri_mode_eth_mac_v3_5_trimac_gen_1_xst.log -intstyle silent -finalclean 1
+s
+FormatString
+xst [-ifn <InputFile>] [-ofn <OutputFile>] [-ise <iseProjectFile>] [--quiet] [-intstyle <Style>] [--deb <DebugLevel>] [--finalclean <Clean>] [--PcubeFlow] [--globOptFlow] [--XstNtrc]
+s

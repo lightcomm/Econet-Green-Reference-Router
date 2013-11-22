@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nf:module xmlns:nf="http://www.NetFPGA.org/NF2_register_system" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.NetFPGA.org/NF2_register_system NF2_register_system.xsd ">
+	<nf:name>bitrate_ewma</nf:name>
+	<nf:prefix>bitrate_ewma</nf:prefix>
+	<nf:location>udp</nf:location>
+	<nf:description>Registers for Bitrate computation with Ewma </nf:description>
+	<nf:blocksize>64</nf:blocksize>
+	<nf:registers>
+		<nf:register>
+	           <nf:name>alpha</nf:name>
+	           <nf:description>Input register contains alpha parameter for ewma behaviour (7 possible values [0-7]. 0 is default)</nf:description>
+	           <nf:type>generic_software32</nf:type>
+	        </nf:register>
+
+		<nf:register>
+		  <nf:name>ewma</nf:name>
+			<nf:description>Output register contains total bitrate with ewma</nf:description>
+			<nf:type>generic_hardware32</nf:type>
+	        </nf:register>
+	</nf:registers>
+	<nf:constants>
+	</nf:constants>
+	<nf:types>		
+	</nf:types>
+</nf:module>
